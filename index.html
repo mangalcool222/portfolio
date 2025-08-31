@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangal Soren | Portfolio</title>
+  <style>
+    /* --- Reset + Fonts --- */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* --- Navbar --- */
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00f7ff;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li {
+      list-style: none;
+      transition: 0.3s;
+    }
+    nav ul li:hover {
+      color: #00f7ff;
+    }
+
+    /* --- Hero Section --- */
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    header h2 {
+      font-size: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 0.5s;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 1rem 0;
+      background: linear-gradient(90deg,#00f7ff,#ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 1s forwards 1s;
+    }
+    header p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 1.5s;
+    }
+    header button {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg,#00f7ff,#ff00ff);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 2s;
+    }
+    header button:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Sections --- */
+    section {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      margin: 10px auto;
+      background: linear-gradient(90deg,#00f7ff,#ff00ff);
+    }
+
+    /* --- Projects --- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .project {
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.1);
+    }
+    .project h3 {
+      margin-bottom: 1rem;
+      color: #00f7ff;
+    }
+
+    /* --- Contact --- */
+    .contact {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+    }
+    .contact button {
+      background: linear-gradient(90deg,#00f7ff,#ff00ff);
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.6);
+      margin-top: 3rem;
+    }
+
+    /* --- Animations --- */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>Mangal Soren</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header>
+    <h2>Hello, I'm</h2>
+    <h1>Mangal Soren</h1>
+    <p>Aspiring Business Analyst & Developer — blending technology, strategy, and design to create meaningful solutions.</p>
+    <button onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm an MBA student passionate about technology, data, and design. With experience in financial modeling, strategy, and coding (Python, SQL, web dev), I enjoy building solutions that are both impactful and user-friendly.</p>
+  </section>
+
+  <!-- Projects -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>
+          <a href="assets/documents/ESG_Mutual_Funds.pdf" target="_blank">ESG Mutual Funds Research</a>
+        </h3>
+        <p>Analyzed ESG vs Non-ESG funds using statistical models, ML (XGBoost, clustering), and financial risk measures.</p>
+      </div>
+      <div class="project">
+        <h3>
+          <a href="assets/documents/AI_chatbots.pdf" target="_blank">Impact of AI-Driven Chatbots on Customer Satisfaction</a>
+        </h3>
+        <p>Studied customer support experiences to evaluate AI chatbots vs. human agents and proposed a hybrid model.</p>
+      </div>
+    </div>
+  </section>
+     <!-- Certifications -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li><a href="https://www.coursera.org/account/accomplishments/certificate/XXXX" target="_blank">Financial Markets – Yale (Coursera)</a></li>
+      <li><a href="https://www.linkedin.com/learning/certificates/YYYY" target="_blank">SQL for Data Analysis – LinkedIn Learning</a></li>
+      <li><a href="https://www.udemy.com/certificate/ZZZZ" target="_blank">Python for Data Science – Udemy</a></li>
+    </ul>
+  </section>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mangal Soren. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
