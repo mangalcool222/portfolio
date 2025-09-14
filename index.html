@@ -286,18 +286,22 @@
   }
 </style>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <form action="https://formsubmit.co/mangalsoren176@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://mangalcool222.github.io/portfolio/thankyou.html">
+    </form>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
