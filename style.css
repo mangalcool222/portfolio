@@ -137,12 +137,13 @@ nav .container {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+    padding-bottom: 80px;
     /* Added to prevent content form being hidden behind nav or top edge */
 }
 
