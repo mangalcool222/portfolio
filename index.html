@@ -1,404 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mangal Soren | Portfolio</title>
-  <style>
-    /* --- Reset + Fonts --- */
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: linear-gradient(135deg, #1e1e2f, #2c3e50);
-      color: white;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangal Soren | The Product Strategist</title>
 
-    /* --- Navbar --- */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-    nav h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00f7ff;
-    }
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      list-style: none;
-      transition: 0.3s;
-    }
-    nav ul li:hover {
-      color: #00f7ff;
-    }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
 
-    /* --- Hero Section --- */
-    header {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 0 1rem;
-    }
-    header h2 {
-      font-size: 2rem;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 0.5s;
-    }
-    header h1 {
-      font-size: 3.5rem;
-      margin: 1rem 0;
-      background: linear-gradient(90deg,#00f7ff,#ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInUp 1s forwards 1s;
-    }
-    header p {
-      max-width: 600px;
-      font-size: 1.1rem;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 1.5s;
-    }
-    header button {
-      margin-top: 2rem;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 25px;
-      background: linear-gradient(90deg,#00f7ff,#ff00ff);
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.3s;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 2s;
-    }
-    header button:hover {
-      transform: scale(1.05);
-    }
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    /* --- Sections --- */
-    section {
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    section h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      margin: 10px auto;
-      background: linear-gradient(90deg,#00f7ff,#ff00ff);
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    /* --- Projects --- */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 2rem;
-    }
-    .project {
-      background: rgba(255,255,255,0.05);
-      padding: 2rem;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-    .project:hover {
-      transform: translateY(-10px);
-      background: rgba(255,255,255,0.1);
-    }
-    .project h3 {
-      margin-bottom: 1rem;
-      color: #00f7ff;
-    }
-
-    /* --- Contact --- */
-    .contact {
-      background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      padding: 3rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    .contact input, .contact textarea {
-      width: 100%;
-      margin: 0.5rem 0;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 10px;
-      outline: none;
-    }
-    .contact button {
-      background: linear-gradient(90deg,#00f7ff,#ff00ff);
-      border: none;
-      padding: 1rem;
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: 25px;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    /* --- Footer --- */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0,0,0,0.6);
-      margin-top: 3rem;
-    }
-
-    /* --- Animations --- */
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <!-- Fallback if exists, or browser default -->
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <h1>Mangal Soren</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo text-gradient-brand">MANGAL.</a>
+            <div class="nav-links">
+                <a href="#projects">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Arsenal</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Hero -->
-  <header>
-    <h2>Hello, I'm</h2>
-    <h1>Mangal Soren</h1>
-    <p>Aspiring Business Analyst & Strategy Professional — combining finance, data, and management insights to drive impactful solutions.</p>
-    <button onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Hi, I’m Mangal Soren. <br> <span class="text-gradient-brand">I build structured growth systems.</span>
+            </h1>
+            <p>MBA (Business Economics) candidate focused on marketing analytics, user research, and performance
+                tracking. <br> Exploring real-world growth execution through <span
+                    class="text-gradient">CreatiGen</span> and <span class="text-gradient">Creatorlytics</span>.</p>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p> I’m an MBA student with a strong interest in data analysis and problem-solving. My experience ranges from working capital management at Tata Steel to ESG mutual fund research, where I applied statistical and analytical models. Skilled in tools like Python, SQL, Excel, and visualization platforms, I enjoy uncovering patterns in data and translating them into actionable strategies. I aim to blend business knowledge with analytical skills to create meaningful, real-world impact.</p>
-  </section>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-secondary">Let’s Connect</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">The <span class="text-gradient-brand">Work</span></h2>
 
-    <!-- ESG Mutual Funds Research -->
-    <div class="project">
-      <h3>
-        <a href="assets/documents/ESG_Mutual_Funds.pdf" target="_blank">ESG Mutual Funds Research</a>
-      </h3>
-      <p>
-        Conducted a <b>year-long research project</b> comparing <b>ESG vs. Non-ESG mutual funds</b>. 
-        Applied advanced models such as <b>Fama-French 3-Factor</b>, <b>Maximum Drawdown</b>, and 
-        <b>Machine Learning (XGBoost, K-means clustering)</b> to evaluate performance and risk-adjusted returns. 
-        Designed a framework for building a <b>high-performance ESG mutual fund</b> with actionable investment insights.
-      </p>
-    </div>
+            <!-- CreatiGen -->
+            <div class="project-card fade-in-up">
+                <div class="project-header">
+                    <h3 class="project-title">CreatiGenHQ</h3>
+                    <span class="project-type">Product Validation & Market Research</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-desc">CreatiGen is an early-stage AI content concept built to help creators and
+                        marketers gain clarity before investing time in content production.</p>
+                    <p class="project-desc">The project focused on validating real user needs and identifying whether
+                        the problem was content generation or decision confidence.</p>
+                    <p class="project-desc" style="color: #ffffff; margin-top: 15px; margin-bottom: 5px;"><strong>What I
+                            did:</strong></p>
+                    <ul class="project-list">
+                        <li>Designed a structured validation framework for early-stage testing</li>
+                        <li>Conducted user interviews and analyzed feedback patterns</li>
+                        <li>Refined positioning based on insights gathered</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://creatigenhq.com/" target="_blank">Visit Live Site <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
 
-    <!-- AI Chatbots Project -->
-    <div class="project">
-      <h3>
-        <a href="assets/documents/AI_chatbots.pdf" target="_blank">AI-Driven Chatbots & Customer Satisfaction</a>
-      </h3>
-      <p>
-        Researched how <b>AI-powered chatbots</b> affect customer support across industries. 
-        Compared <b>AI vs. human agent performance</b> using surveys, case studies, and satisfaction metrics. 
-        Proposed a <b>hybrid customer engagement model</b> blending AI efficiency with human empathy, 
-        aligning with the future of <b>digital-first businesses</b>.
-      </p>
-    </div>
+            <!-- Creatorlytics -->
+            <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="project-header">
+                    <h3 class="project-title">Creatorlytics</h3>
+                    <span class="project-type">Product & Growth Strategy</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-desc">Creatorlytics is a creator-focused analytics initiative designed to help
+                        independent creators understand revenue impact, performance metrics, and growth efficiency in a
+                        structured way.</p>
+                    <p class="project-desc">The objective was to validate whether creators need simplified,
+                        decision-oriented analytics instead of fragmented dashboard data.</p>
+                    <p class="project-desc" style="color: #ffffff; margin-top: 15px; margin-bottom: 5px;"><strong>What I
+                            did:</strong></p>
+                    <ul class="project-list">
+                        <li>Conducted user interviews to identify pain points around tracking growth and monetization
+                        </li>
+                        <li>Refined target segments and clarified ideal user profile</li>
+                        <li>Built a structured outreach database and executed cold email campaigns</li>
+                        <li>Set up GA4 to track user behavior and engagement trends</li>
+                        <li>Ran SEO experiments to test demand and positioning</li>
+                    </ul>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.creatorlytics.cloud/" target="_blank">Visit Live Site <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
 
-    <!-- MindWellMetrics -->
-    <div class="project">
-      <h3>
-        <a href="https://mangalcool222.github.io/mindwellmetrics/" target="_blank">MindWellMetrics</a>
-      </h3>
-      <p>
-        A personal initiative combining <b>data analytics, design, and well-being</b>. 
-        Built an interactive platform to explore how <b>mental health data</b> can guide lifestyle improvements. 
-        Integrated visualization tools (Python, Power BI, Web Dev) to deliver insights in a 
-        <b>clear and engaging format</b>. Demonstrates my passion for <b>analytics-driven impact</b>.
-      </p>
-    </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Research & Case Studies Section -->
+    <section id="case-studies" class="section-padding" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Research & <span class="text-gradient-brand">Case Studies</span></h2>
 
-<!-- CSS -->
-<style>
-#projects {
-  padding: 5rem 2rem;
-  text-align: center;
-}
+            <div class="experience-grid">
 
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  position: relative;
-  color: #fff;
-}
+                <!-- ESG Mutual Fund Analysis -->
+                <div class="xp-card fade-in-up" style="grid-column: span 2;">
+                    <span class="timeline-date">Jan 2024 – Apr 2024</span>
+                    <h3 class="timeline-title">ESG Mutual Fund Analysis</h3>
+                    <p class="timeline-subtitle">Research Analyst @ DBE, University of Delhi</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Problem:</strong> Do sustainable funds actually perform better, or is it just
+                                hype?</li>
+                            <li><strong>Action:</strong> Scraped and cleaned NAV data from NSE/AMFI using Python
+                                (Pandas). Applied Fama-French 3-Factor Model & Sharpe Ratio to analyze volatility.</li>
+                            <li><strong>Result:</strong> Delivered a comparative study on ESG vs. Non-ESG funds, proving
+                                that sustainability doesn't compromise returns. Presented findings to faculty on the
+                                correlation between ESG scores and stability.</li>
+                        </ul>
+                    </div>
+                </div>
 
-#projects h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin: 10px auto;
-  background: linear-gradient(90deg,#00f7ff,#ff00ff);
-}
+                <!-- Customer Support Experience Study -->
+                <div class="xp-card fade-in-up">
+                    <h3 class="timeline-title">AI vs. Human Support</h3>
+                    <p class="timeline-subtitle">Customer Experience Study</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Method:</strong> Designed a detailed survey to assess user trust in chatbots vs.
+                                humans.</li>
+                            <li><strong>Analysis:</strong> Used Mann-Whitney U & Chi-Square tests to identify
+                                significant trust gaps.</li>
+                            <li><strong>Outcome:</strong> Proposed a hybrid support model to maximize efficiency without
+                                losing the human touch.</li>
+                        </ul>
+                    </div>
+                </div>
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 2rem;
-}
+                <!-- Workforce Behavior Survey -->
+                <div class="xp-card fade-in-up">
+                    <h3 class="timeline-title">Workforce Behavior</h3>
+                    <p class="timeline-subtitle">BIT Mesra Capstone</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Scope:</strong> Conducted surveys at Concentrix BPO (100+ submissions).</li>
+                            <li><strong>Insight:</strong> Identified key sentiment patterns and proposed actionable
+                                workplace improvements to reduce attrition.</li>
+                        </ul>
+                    </div>
+                </div>
 
-.project {
-  background: rgba(255,255,255,0.05);
-  padding: 2rem;
-  border-radius: 20px;
-  transition: 0.3s;
-  text-align: left;
-}
+                <!-- KPMG -->
+                <div class="xp-card fade-in-up">
+                    <span class="timeline-date">2020</span>
+                    <h3 class="timeline-title">KPMG Data Analytics</h3>
+                    <p class="timeline-subtitle">Virtual Internship</p>
+                    <p class="project-desc">Simulated real client engagement. Cleaned and visualized data to identify
+                        KPIs and business bottlenecks.</p>
+                </div>
 
-.project:hover {
-  transform: translateY(-10px);
-  background: rgba(255,255,255,0.1);
-}
+                <!-- BCG -->
+                <div class="xp-card fade-in-up">
+                    <h3 class="timeline-title">BCG Strategy Consulting</h3>
+                    <p class="timeline-subtitle">Virtual Experience</p>
+                    <p class="project-desc">Led strategic research initiatives. Extracted insights from complex datasets
+                        to drive informed decision-making.</p>
+                </div>
 
-.project h3 {
-  margin-bottom: 1rem;
-  color: #00f7ff;
-  font-size: 1.3rem;
-}
+            </div>
+        </div>
+    </section>
 
-.project h3 a {
-  text-decoration: none;
-  color: #00f7ff;
-}
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">The <span class="text-gradient-brand">Grind</span></h2>
 
-.project h3 a:hover {
-  text-decoration: underline;
-}
+            <div class="timeline">
 
-.project p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ddd;
-}
-</style>
-     <!-- Certifications -->
-<section id="certifications">
-  <h2>Certifications</h2>
-  <div class="certifications-grid">
-    <div class="cert-card">Fundamentals of Digital Marketing <br><span>Google Digital Garage</span></div>
-    <div class="cert-card">Basics of Total Quality Management <br><span>Tata Steel</span></div>
-    <div class="cert-card">Power BI, Excel, Python <br><span>Havish Consulting</span></div>
-    <div class="cert-card">Football Analytics Using Python <br><span>MAD About Sports</span></div>
-    <div class="cert-card">Introduction to Corporate Finance <br><span>Udemy</span></div>
-    <div class="cert-card">Economics for Capital Market <br><span>CFI</span></div>
-    <div class="cert-card">Introduction to Business Intelligence <br><span>CFI</span></div>
-    <div class="cert-card">Introduction to Data Analytics <br><span>IBM (Coursera)</span></div>
-    <div class="cert-card">Data Visualization & Dashboards with Excel and Cognos <br><span>IBM (Coursera)</span></div>
-    <div class="cert-card">Data Analysis & Visualization with Excel <br><span>IBM</span></div>
-    <div class="cert-card">IBM Data Science Specialization <br><span>In Progress</span></div>
-  </div>
-</section>
+                <!-- Tata Steel -->
+                <div class="timeline-item fade-in-up">
+                    <span class="timeline-date">Jun 2024 – Jul 2024</span>
+                    <h3 class="timeline-title">Finance Intern @ Tata Steel Ltd</h3>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Analyzed 5-year financial datasets using Pivot Tables & Trend Analysis.</li>
+                            <li>Prepared weekly KPI dashboards for 1,000+ employees.</li>
+                            <li>Standardized Excel reporting templates to slash reporting time.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<style>
-  #certifications {
-    padding: 5rem 2rem;
-    text-align: center;
-  }
-  #certifications h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  #certifications h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    margin: 10px auto;
-    background: linear-gradient(90deg,#00f7ff,#ff00ff);
-  }
+                <!-- Digital Remedy -->
+                <div class="timeline-item fade-in-up">
+                    <span class="timeline-date">Sep 2022 – Nov 2022</span>
+                    <h3 class="timeline-title">Marketing Intern @ Digital Remedy Techies</h3>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Tracked campaign performance across Meta platforms (CTR, Leads).</li>
+                            <li>Optimized campaigns resulting in ~25% engagement improvement.</li>
+                            <li>Coordinated with design teams for timely execution.</li>
+                        </ul>
+                    </div>
+                </div>
 
-  .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
+                <!-- Vooz -->
+                <div class="timeline-item fade-in-up">
+                    <span class="timeline-date">Jan 2020 – Feb 2022</span>
+                    <h3 class="timeline-title">Marketing Intern @ Vooz Pvt Ltd</h3>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Conducted competitor pricing analysis and consumer research.</li>
+                            <li>Built structured datasets to support positioning strategy.</li>
+                        </ul>
+                    </div>
+                </div>
 
-  .cert-card {
-    background: rgba(255,255,255,0.05);
-    padding: 1.5rem;
-    border-radius: 15px;
-    transition: 0.3s ease;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: white;
-  }
-  .cert-card span {
-    font-size: 0.9rem;
-    color: #00f7ff;
-  }
-  .cert-card:hover {
-    transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(0,247,255,0.2), rgba(255,0,255,0.2));
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-</style>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <form action="https://formsubmit.co/mangalsoren176@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
+    <!-- Leadership Section -->
+    <section id="leadership" class="section-padding" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Leadership & <span class="text-gradient-brand">Impact</span></h2>
 
-      <!-- Hidden fields -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://mangalcool222.github.io/portfolio/thankyou.html">
-    </form>
-  </div>
-</section>
+            <div class="experience-grid">
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Mangal Soren. All rights reserved.</p>
-  </footer>
+                <!-- Roots -->
+                <div class="xp-card fade-in-up" style="grid-column: span 2;">
+                    <span class="timeline-date">Aug 2023 – Present</span>
+                    <h3 class="timeline-title">Convenor, Roots</h3>
+                    <p class="timeline-subtitle">The Social Service Club, DBE</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Led a 15-member student team to organize donation drives and community outreach across
+                                Delhi.</li>
+                            <li>Collaborated with NGOs and local partners for CSR and social impact events.</li>
+                            <li>Created awareness campaigns on sustainability, mental health, and social justice using
+                                digital channels.</li>
+                            <li>Spearheaded clean-up drives, winter clothing drives, and gear distribution for stray
+                                dogs.</li>
+                            <li>Managed planning, logistics, content, and speaker onboarding for ESG talk series with
+                                Tech Mahindra & BDO India.</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <!-- TEDx -->
+                <div class="xp-card fade-in-up">
+                    <span class="timeline-date">Mar 2023 – Jul 2024</span>
+                    <h3 class="timeline-title">Coordination & Outreach</h3>
+                    <p class="timeline-subtitle">TEDxDFBEDU</p>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Reached out to 100+ speakers, followed up, and ensured smooth onboarding.</li>
+                            <li>Helped coordinate schedules and session planning for the TEDx event.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Skills & <span class="text-gradient-brand">Tools</span></h2>
+            <div class="skills-grid fade-in-up">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">Market Research</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Campaign Analytics</span>
+                <span class="skill-tag">MS Excel (Advanced)</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Google Analytics 4</span>
+                <span class="skill-tag">SEO Experimentation</span>
+                <span class="skill-tag">Stakeholder Management</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">The <span class="text-gradient-brand">Foundation</span></h2>
+            <div class="experience-grid">
+
+                <div class="xp-card fade-in-up">
+                    <span class="timeline-date">2023 – Present</span>
+                    <h3 class="timeline-title">MBA (Business Economics)</h3>
+                    <p class="timeline-subtitle">University of Delhi</p>
+                    <p class="project-desc">Focusing on B2B marketing, campaign analytics, and structured
+                        performance tracking.</p>
+                </div>
+
+                <div class="xp-card fade-in-up">
+                    <span class="timeline-date">Graduated</span>
+                    <h3 class="timeline-title">BBA</h3>
+                    <p class="timeline-subtitle">Birla Institute of Technology, Mesra</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in <span class="text-gradient-brand">Touch</span></h2>
+            <p class="project-desc" style="max-width: 600px; margin: 0 auto 40px auto;">
+                Open to opportunities in marketing, product, and analytics-focused roles.
+            </p>
+
+            <div class="social-links">
+                <a href="mailto:mangalsoren@zohomail.in" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:9771783048" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://www.linkedin.com/in/mangal-soren-1312ba31a/" target="_blank" title="LinkedIn"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/Mangal977" target="_blank" title="X (Twitter)"><i
+                        class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <p>&copy; 2026 Mangal Soren. Built with <i class="fa-solid fa-bolt"
+                    style="color: var(--accent-secondary);"></i> and <i class="fa-solid fa-code"
+                    style="color: var(--accent-primary);"></i>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
+
 </html>
