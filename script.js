@@ -45,4 +45,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Interactive Project Case Study Accordion Toggle
+function toggleProjectDetails(btn) {
+    const card = btn.closest('.project-card') || btn.closest('.xp-card');
+    if (!card) return;
+    const collapsible = card.querySelector('.project-details-collapsible');
+    if (!collapsible) return;
+
+    const isActive = collapsible.classList.contains('active');
+    if (isActive) {
+        collapsible.classList.remove('active');
+        btn.classList.remove('active');
+        const textSpan = btn.querySelector('.btn-text');
+        if (textSpan) textSpan.textContent = 'View Full Case Study';
+    } else {
+        collapsible.classList.add('active');
+        btn.classList.add('active');
+        const textSpan = btn.querySelector('.btn-text');
+        if (textSpan) textSpan.textContent = 'Hide Details';
+    }
+}
+
 console.log("%c Designed & Built by Mangal Soren ", "background: #bd00ff; color: white; padding: 10px; border-radius: 5px; font-weight: bold;");

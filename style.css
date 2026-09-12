@@ -281,16 +281,18 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .project-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--text-primary);
 }
 
 .project-type {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--accent-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -301,13 +303,103 @@ nav .container {
 
 .project-desc {
     color: var(--text-secondary);
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Metric & Tech Stack Pills */
+.pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 20px 0;
+}
+
+.pill {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pill-metric {
+    background: rgba(0, 243, 255, 0.08);
+    color: var(--accent-secondary);
+    border: 1px solid rgba(0, 243, 255, 0.25);
+}
+
+.pill-tech {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.project-actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-toggle-details {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-toggle-details:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+.btn-toggle-details i {
+    transition: transform 0.3s ease;
+}
+
+.btn-toggle-details.active i {
+    transform: rotate(180deg);
+}
+
+/* Collapsible Accordion Drawer */
+.project-details-collapsible {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, margin 0.3s ease;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.project-details-collapsible.active {
+    max-height: 2500px;
+    opacity: 1;
+    margin-top: 20px;
+    padding-top: 20px;
+    transition: max-height 0.6s ease-in-out, opacity 0.4s ease 0.1s;
 }
 
 .project-list {
-    margin-bottom: 30px;
-    padding-left: 10px;
+    margin-bottom: 25px;
+    padding-left: 5px;
 }
 
 .project-list li {
@@ -315,7 +407,7 @@ nav .container {
     margin-bottom: 8px;
     position: relative;
     padding-left: 20px;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 .project-list li::before {
@@ -327,14 +419,22 @@ nav .container {
 
 .project-links a {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, rgba(0,243,255,0.15) 0%, rgba(189,0,255,0.15) 100%);
+    border: 1px solid rgba(0, 243, 255, 0.4);
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
 .project-links a:hover {
-    color: var(--accent-secondary);
+    background: linear-gradient(135deg, rgba(0,243,255,0.3) 0%, rgba(189,0,255,0.3) 100%);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    color: #ffffff;
 }
 
 /* Timeline / Experience */
