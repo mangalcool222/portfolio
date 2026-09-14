@@ -1,36 +1,38 @@
-// Interactive Project Case Study Accordion Toggle
-function toggleProjectDetails(btn) {
-    const card = btn.closest('.app-card') || btn.closest('.project-card') || btn.closest('.xp-card');
+// Case Study Accordion Toggle
+function toggleCaseStudy(btn) {
+    const card = btn.closest('.card-minimal') || btn.closest('.xp-item-minimal');
     if (!card) return;
-    const collapsible = card.querySelector('.project-details-collapsible');
-    if (!collapsible) return;
+    const drawer = card.querySelector('.case-study-drawer');
+    if (!drawer) return;
 
-    const isActive = collapsible.classList.contains('active');
+    const isActive = drawer.classList.contains('active');
+    const textSpan = btn.querySelector('span');
+    const icon = btn.querySelector('i');
+
     if (isActive) {
-        collapsible.classList.remove('active');
+        drawer.classList.remove('active');
         btn.classList.remove('active');
-        const textSpan = btn.querySelector('.btn-text');
-        if (textSpan) textSpan.textContent = 'View Full Case Study';
+        if (textSpan) textSpan.textContent = 'EXPLORE CASE STUDY';
+        if (icon) icon.className = 'fa-solid fa-plus';
     } else {
-        collapsible.classList.add('active');
+        drawer.classList.add('active');
         btn.classList.add('active');
-        const textSpan = btn.querySelector('.btn-text');
-        if (textSpan) textSpan.textContent = 'Hide Case Study';
+        if (textSpan) textSpan.textContent = 'CLOSE CASE STUDY';
+        if (icon) icon.className = 'fa-solid fa-minus';
     }
 }
 
-// Tab View Filtering Logic
+// Tab Filter Logic
 function filterView(viewCategory, btn) {
-    // Update active button state
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
+    if (btn) {
+        document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
 
     const sections = document.querySelectorAll('.view-section');
 
     if (viewCategory === 'all') {
-        sections.forEach(sec => {
-            sec.classList.remove('hidden-view');
-        });
+        sections.forEach(sec => sec.classList.remove('hidden-view'));
     } else {
         sections.forEach(sec => {
             if (sec.classList.contains(`view-${viewCategory}`)) {
@@ -42,7 +44,7 @@ function filterView(viewCategory, btn) {
     }
 }
 
-// Smooth scroll for nav links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -58,4 +60,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-console.log("%c Designed & Built for Executive Impact by Mangal Soren ", "background: #00f3ff; color: black; padding: 8px 12px; border-radius: 4px; font-weight: bold;");
+console.log("%c MANGAL SOREN — EXECUTIVE PORTFOLIO ", "background: #ccff00; color: black; padding: 10px; font-weight: bold; border-radius: 4px;");

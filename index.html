@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangal Soren | Product & Operations Leader</title>
+    <title>MANGAL SOREN — Product & Operations Execution</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -23,254 +23,198 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo text-gradient-brand">MANGAL.</a>
+    <!-- Minimal Header -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="brand-logo">MANGAL SOREN<span class="dot-accent">.</span></a>
             <div class="nav-links">
-                <a href="#apps">Live Apps</a>
-                <a href="#experience">Experience</a>
-                <a href="#research">Research</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact" class="nav-btn-contact">Contact</a>
+                <a href="#work" onclick="filterView('apps')">WORK</a>
+                <a href="#experience" onclick="filterView('experience')">EXPERIENCE</a>
+                <a href="#research" onclick="filterView('research')">RESEARCH</a>
+                <a href="#skills" onclick="filterView('all')">ARSENAL</a>
+                <a href="#contact" class="nav-cta">GET IN TOUCH</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-badge fade-in-up">
-                <span class="pulse-dot"></span> Open to Product & Operations Roles
+    <!-- Hero Section (Steven Bartlett Minimal Style) -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-header-badge">
+                <span class="status-indicator"></span> PRODUCT EXECUTION & OPERATIONS
             </div>
             
-            <h1 class="fade-in-up">Mangal Soren</h1>
-            <p class="hero-subtitle fade-in-up">
-                MBA (Business Economics) candidate with hands-on experience building, testing, and scaling early-stage web platforms. 
-                Currently executing product strategy for <span class="text-highlight">UGhar</span>, <span class="text-highlight">Kanjo</span>, <span class="text-highlight">Creatorlytics</span>, and <span class="text-highlight">CreatiGen</span>.
+            <h1 class="hero-title">MANGAL SOREN</h1>
+            
+            <p class="hero-tagline">
+                MBA (Business Economics) candidate specializing in building, testing, and operating early-stage digital products.
+                Currently scaling execution for <a href="https://www.ughar.in/" target="_blank" class="highlight-link">UGhar</a>, <a href="https://kanjo.co.in/" target="_blank" class="highlight-link">Kanjo</a>, <a href="https://www.creatorlytics.cloud/" target="_blank" class="highlight-link">Creatorlytics</a>, and <a href="https://creatigenhq.com/" target="_blank" class="highlight-link">CreatiGen</a>.
             </p>
 
-            <!-- Quick Metrics Bar -->
-            <div class="metrics-grid fade-in-up">
-                <div class="metric-card">
-                    <span class="metric-number">4</span>
-                    <span class="metric-label">Live Web Apps Built</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">60+</span>
-                    <span class="metric-label">Cold Outreach & Discovery Tests</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">₹99</span>
-                    <span class="metric-label">Hyperlocal Inspection Model</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">MBA</span>
-                    <span class="metric-label">University of Delhi (DBE)</span>
-                </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="btn-group fade-in-up">
-                <a href="#apps" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Explore Live Apps</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Let’s Connect</a>
+            <div class="hero-actions">
+                <a href="#work" class="btn-primary-volt">EXPLORE LIVE APPS <i class="fa-solid fa-arrow-down-right"></i></a>
+                <a href="#contact" class="btn-secondary-dark">LET’S CONNECT <i class="fa-solid fa-paper-plane"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Filter / View Tabs -->
-    <div class="view-tabs-bar sticky-tabs">
-        <div class="container tabs-container">
-            <button class="tab-btn active" onclick="filterView('all', this)">
-                <i class="fa-solid fa-grid-2"></i> All Overview
-            </button>
-            <button class="tab-btn" onclick="filterView('apps', this)">
-                <i class="fa-solid fa-laptop-code"></i> Live Apps (4)
-            </button>
-            <button class="tab-btn" onclick="filterView('experience', this)">
-                <i class="fa-solid fa-briefcase"></i> Experience
-            </button>
-            <button class="tab-btn" onclick="filterView('research', this)">
-                <i class="fa-solid fa-microscope"></i> Research & Analytics
-            </button>
+    <!-- Minimal Tab Switcher -->
+    <div class="sticky-filter-bar">
+        <div class="container filter-container">
+            <button class="filter-tab active" onclick="filterView('all', this)">ALL OVERVIEW</button>
+            <button class="filter-tab" onclick="filterView('apps', this)">LIVE APPS (4)</button>
+            <button class="filter-tab" onclick="filterView('experience', this)">EXPERIENCE</button>
+            <button class="filter-tab" onclick="filterView('research', this)">RESEARCH & STUDIES</button>
         </div>
     </div>
 
-    <!-- Live Apps Section (Modern Compact Grid) -->
-    <section id="apps" class="section-padding view-section view-apps view-all">
+    <!-- Live Apps Section -->
+    <section id="work" class="content-section view-section view-apps view-all">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <span class="section-tag">LIVE PLATFORMS</span>
-                <h2 class="section-title">Shipped <span class="text-gradient-brand">Products</span></h2>
-                <p class="section-desc">Interactive web applications engineered for hyperlocal execution, discovery algorithms, and creator analytics.</p>
+            <div class="section-title-wrap">
+                <span class="sub-label">01 / SHIPPED PRODUCTS</span>
+                <h2 class="title-display">LIVE <span class="volt-text">PLATFORMS</span></h2>
             </div>
 
-            <div class="apps-grid">
+            <div class="compact-grid">
 
-                <!-- 1. UGhar -->
-                <div class="app-card fade-in-up">
-                    <div class="app-card-header">
-                        <div class="app-title-group">
-                            <span class="live-pill"><span class="pulse-dot-green"></span> LIVE</span>
-                            <h3 class="app-name">UGhar</h3>
-                        </div>
-                        <a href="https://www.ughar.in/" target="_blank" class="app-live-btn" title="Open Website">
+                <!-- UGhar -->
+                <div class="card-minimal">
+                    <div class="card-top-header">
+                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <a href="https://www.ughar.in/" target="_blank" class="card-domain-link">
                             ughar.in <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
+                    <h3 class="card-heading">UGhar — Hyperlocal Home Services</h3>
+                    <p class="card-subhead">On-Demand Technician Dispatch • Jamshedpur</p>
+                    <p class="card-summary">On-demand doorstep repair connecting households with technicians. Engineered 60s mobile booking, QR partner security, 4-digit OTP dispatch, and transparent ₹99 inspection pricing.</p>
                     
-                    <p class="app-tagline">Hyperlocal Home Services Platform • Jamshedpur</p>
-                    <p class="app-desc">On-demand doorstep repair & maintenance connecting households with verified technicians. Led end-to-end user flows, dynamic booking, QR partner validation, and ₹99 inspection pricing.</p>
-
-                    <div class="pills-container">
-                        <span class="pill pill-metric"><i class="fa-solid fa-bolt"></i> 60s Booking</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-shield-halved"></i> QR & OTP Security</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-receipt"></i> ₹99 Inspection</span>
-                        <span class="pill pill-tech">Next.js</span>
-                        <span class="pill pill-tech">Supabase</span>
-                        <span class="pill pill-tech">Firebase Auth</span>
+                    <div class="tag-row">
+                        <span class="tag-volt">Next.js</span>
+                        <span class="tag-volt">Supabase</span>
+                        <span class="tag-volt">Firebase Auth</span>
+                        <span class="tag-volt">₹99 Model</span>
                     </div>
 
-                    <button type="button" class="btn-toggle-details" onclick="toggleProjectDetails(this)">
-                        <span class="btn-text">View Full Case Study</span> <i class="fa-solid fa-chevron-down"></i>
+                    <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
+                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
-                    <div class="project-details-collapsible">
-                        <p class="detail-label">The Problem</p>
-                        <p class="detail-text">Household repair services in Tier-2/3 cities suffer from fragmented local technicians, unpredictable visit charges, and zero pricing transparency.</p>
-                        
-                        <p class="detail-label">What I Found</p>
-                        <p class="detail-text">Conducted field research across Jamshedpur (Sakchi, Bistupur, Sonari, Kadma, Baridih). Identified customer preference for a flat ₹99 inspection fee waived upon service completion.</p>
+                    <div class="case-study-drawer">
+                        <p class="cs-label">THE PROBLEM & FIELD FINDINGS</p>
+                        <p class="cs-text">Household repair in Tier-2/3 cities suffers from fragmented local technicians and hidden charges. Field research across Jamshedpur sectors (Sakchi, Bistupur, Sonari, Kadma) proved customer preference for a flat ₹99 doorstep inspection fee waived upon job execution.</p>
 
-                        <p class="detail-label">Key Deliverables</p>
-                        <ul class="project-list">
-                            <li>Engineered 60-second mobile booking flow with category dispatch</li>
-                            <li>Implemented 4-digit start/complete OTP security and partner QR scanning</li>
-                            <li>Configured backend infrastructure using Next.js, Supabase, Firebase, and Coolify</li>
-                            <li>Tested and resolved responsive UI freezes, broken links, and checkout validations</li>
+                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <ul class="cs-bullets">
+                            <li>Built 60-second mobile booking workflow with category dispatch</li>
+                            <li>Implemented 4-digit start/complete OTP security & technician QR verification</li>
+                            <li>Configured cloud infrastructure on Next.js, Supabase, Firebase, and Coolify</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 2. Kanjo -->
-                <div class="app-card fade-in-up">
-                    <div class="app-card-header">
-                        <div class="app-title-group">
-                            <span class="live-pill"><span class="pulse-dot-green"></span> LIVE</span>
-                            <h3 class="app-name">Kanjo</h3>
-                        </div>
-                        <a href="https://kanjo.co.in/" target="_blank" class="app-live-btn" title="Open Website">
+                <!-- Kanjo -->
+                <div class="card-minimal">
+                    <div class="card-top-header">
+                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <a href="https://kanjo.co.in/" target="_blank" class="card-domain-link">
                             kanjo.co.in <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
+                    <h3 class="card-heading">Kanjo — Mood-Based Anime Discovery</h3>
+                    <p class="card-subhead">Intent & Emotional Media Search</p>
+                    <p class="card-summary">Discovery platform helping users find anime based on mood and emotional intent rather than rigid genres or ratings. Researched discovery habits and designed feeling-first navigation.</p>
                     
-                    <p class="app-tagline">Mood-Based Anime Discovery Engine</p>
-                    <p class="app-desc">Anime discovery platform helping users find shows based on emotional intent and current mood rather than rigid genres or ratings. Researched discovery habits and designed mood-first navigation.</p>
-
-                    <div class="pills-container">
-                        <span class="pill pill-metric"><i class="fa-solid fa-face-smile"></i> Mood Engine</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-compass"></i> Intent UX Flows</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-tags"></i> Theme Mapping</span>
-                        <span class="pill pill-tech">Product Research</span>
-                        <span class="pill pill-tech">UX Navigation</span>
-                        <span class="pill pill-tech">Anime Metadata</span>
+                    <div class="tag-row">
+                        <span class="tag-volt">Product Research</span>
+                        <span class="tag-volt">Intent UX</span>
+                        <span class="tag-volt">Theme Mapping</span>
                     </div>
 
-                    <button type="button" class="btn-toggle-details" onclick="toggleProjectDetails(this)">
-                        <span class="btn-text">View Full Case Study</span> <i class="fa-solid fa-chevron-down"></i>
+                    <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
+                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
-                    <div class="project-details-collapsible">
-                        <p class="detail-label">The Problem</p>
-                        <p class="detail-text">Traditional platforms index anime by rigid genres, forcing users to spend 20+ minutes scrolling without matching their emotional state.</p>
+                    <div class="case-study-drawer">
+                        <p class="cs-label">THE INSIGHT</p>
+                        <p class="cs-text">Traditional platforms index anime by rigid genres, forcing users to scroll 20+ minutes. Feeling-first discovery accelerates content selection and intent satisfaction.</p>
 
-                        <p class="detail-label">What I Did</p>
-                        <ul class="project-list">
-                            <li>Built and launched an anime discovery platform focused on feeling-first discovery</li>
-                            <li>Researched viewer habits to design intuitive mood-based recommendation flows</li>
-                            <li>Structured public anime datasets around emotional themes, moods, and viewing preferences</li>
-                            <li>Iterated on UX navigation based on user feedback to simplify content selection</li>
+                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <ul class="cs-bullets">
+                            <li>Researched viewer habits and designed mood-first recommendation flows</li>
+                            <li>Structured anime metadata around emotional themes and viewing contexts</li>
+                            <li>Iterated navigation UX based on testing to streamline media selection</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 3. Creatorlytics -->
-                <div class="app-card fade-in-up">
-                    <div class="app-card-header">
-                        <div class="app-title-group">
-                            <span class="live-pill"><span class="pulse-dot-green"></span> LIVE</span>
-                            <h3 class="app-name">Creatorlytics</h3>
-                        </div>
-                        <a href="https://www.creatorlytics.cloud/" target="_blank" class="app-live-btn" title="Open Website">
+                <!-- Creatorlytics -->
+                <div class="card-minimal">
+                    <div class="card-top-header">
+                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <a href="https://www.creatorlytics.cloud/" target="_blank" class="card-domain-link">
                             creatorlytics.cloud <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
+                    <h3 class="card-heading">Creatorlytics — Creator Business CRM</h3>
+                    <p class="card-subhead">Sponsorship & Deal Management</p>
+                    <p class="card-summary">CRM tool helping independent creators track brand deals, sponsorship pipelines, and cash flow operations. Listed on Product Hunt and approved on SaaS Hub.</p>
                     
-                    <p class="app-tagline">Creator Business CRM & Revenue Layer</p>
-                    <p class="app-desc">CRM tool helping independent creators track brand deals, sponsorship pipelines, and cash flow operations. Product Hunt listed and SaaS Hub approved.</p>
-
-                    <div class="pills-container">
-                        <span class="pill pill-metric"><i class="fa-solid fa-rocket"></i> Product Hunt Listed</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-chart-line"></i> 300+ Impressions</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-paper-plane"></i> 60+ Cold Campaigns</span>
-                        <span class="pill pill-tech">FastAPI</span>
-                        <span class="pill pill-tech">Supabase Auth</span>
-                        <span class="pill pill-tech">GA4</span>
+                    <div class="tag-row">
+                        <span class="tag-volt">Product Hunt Listed</span>
+                        <span class="tag-volt">FastAPI</span>
+                        <span class="tag-volt">Supabase</span>
+                        <span class="tag-volt">GA4</span>
                     </div>
 
-                    <button type="button" class="btn-toggle-details" onclick="toggleProjectDetails(this)">
-                        <span class="btn-text">View Full Case Study</span> <i class="fa-solid fa-chevron-down"></i>
+                    <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
+                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
-                    <div class="project-details-collapsible">
-                        <p class="detail-label">The Problem</p>
-                        <p class="detail-text">Solo creators managing 5+ brand deals face structural gaps — conversations get buried in email threads, follow-ups drop, and spreadsheets collapse.</p>
+                    <div class="case-study-drawer">
+                        <p class="cs-label">DISCOVERY & TRACTION</p>
+                        <p class="cs-text">Solo creators managing 5+ brand deals lose track of follow-ups in email threads. Executed 60+ cold outreach campaigns; pivoted to Reddit community validation (300+ impressions).</p>
 
-                        <p class="detail-label">What I Did</p>
-                        <ul class="project-list">
-                            <li>Executed 60+ cold outreach campaigns; pivoted to Reddit community discovery after analyzing conversion data</li>
-                            <li>Generated 300+ impressions across niche creator subreddits (r/creatoreconomy)</li>
-                            <li>Integrated GA4 behavior analytics to track user engagement trends</li>
-                            <li>Listed on SaaS Hub and launched live on Product Hunt</li>
+                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <ul class="cs-bullets">
+                            <li>Executed positioning experiments across creator communities</li>
+                            <li>Set up GA4 user tracking & SEO discovery experiments</li>
+                            <li>Approved on SaaS Hub and launched live on Product Hunt</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 4. CreatiGenHQ -->
-                <div class="app-card fade-in-up">
-                    <div class="app-card-header">
-                        <div class="app-title-group">
-                            <span class="live-pill"><span class="pulse-dot-green"></span> LIVE BETA</span>
-                            <h3 class="app-name">CreatiGenHQ</h3>
-                        </div>
-                        <a href="https://creatigenhq.com/" target="_blank" class="app-live-btn" title="Open Website">
+                <!-- CreatiGenHQ -->
+                <div class="card-minimal">
+                    <div class="card-top-header">
+                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE BETA</span>
+                        <a href="https://creatigenhq.com/" target="_blank" class="card-domain-link">
                             creatigenhq.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
+                    <h3 class="card-heading">CreatiGenHQ — AI Video First Draft Engine</h3>
+                    <p class="card-subhead">Creator Decision Co-Pilot</p>
+                    <p class="card-summary">Decision co-pilot built to eliminate the blank timeline problem by proposing rough-cut timelines while keeping full creative control with the creator.</p>
                     
-                    <p class="app-tagline">AI "First Draft Engine" for Video Creators</p>
-                    <p class="app-desc">Decision co-pilot built to eliminate the blank timeline problem by proposing rough-cut timelines while keeping full creative control with the creator.</p>
-
-                    <div class="pills-container">
-                        <span class="pill pill-metric"><i class="fa-solid fa-clapperboard"></i> First Draft Engine</span>
-                        <span class="pill pill-metric"><i class="fa-solid fa-brain"></i> Decision Co-Pilot</span>
-                        <span class="pill pill-tech">User Discovery</span>
-                        <span class="pill pill-tech">Positioning Test</span>
-                        <span class="pill pill-tech">Reddit Analytics</span>
+                    <div class="tag-row">
+                        <span class="tag-volt">First Draft Engine</span>
+                        <span class="tag-volt">Decision Co-Pilot</span>
+                        <span class="tag-volt">X & Reddit Analytics</span>
                     </div>
 
-                    <button type="button" class="btn-toggle-details" onclick="toggleProjectDetails(this)">
-                        <span class="btn-text">View Full Case Study</span> <i class="fa-solid fa-chevron-down"></i>
+                    <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
+                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
-                    <div class="project-details-collapsible">
-                        <p class="detail-label">Key Insight</p>
-                        <p class="detail-text">Creators don't have an editing capability problem — they have a starting decision problem. CreatiGen proposes rough timeline drafts with reasoning, keeping creator control intact.</p>
+                    <div class="case-study-drawer">
+                        <p class="cs-label">POSITIONING & VALIDATION</p>
+                        <p class="cs-text">Creators don't have an editing capability problem — they have a starting decision problem. Shifted positioning narrative from "AI Generator" to "First Draft Engine".</p>
 
-                        <ul class="project-list">
-                            <li>Designed product positioning experiments across X (Twitter) and Reddit</li>
-                            <li>Shifted narrative from "AI Video Generator" to "First Draft Engine" based on feedback</li>
-                            <li>Mapped workflow gaps between tools like Premiere/CapCut and serious creator needs</li>
+                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <ul class="cs-bullets">
+                            <li>Designed structured validation framework to test rough-cut timeline workflows</li>
+                            <li>Collected feedback to bridge the gap between tools like Premiere/CapCut and creator needs</li>
                         </ul>
                     </div>
                 </div>
@@ -279,26 +223,26 @@
         </div>
     </section>
 
-    <!-- Experience & Timeline Section -->
-    <section id="experience" class="section-padding view-section view-experience view-all">
+    <!-- Experience Section -->
+    <section id="experience" class="content-section view-section view-experience view-all">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <span class="section-tag">WORK & EXECUTION</span>
-                <h2 class="section-title">The <span class="text-gradient-brand">Experience</span></h2>
+            <div class="section-title-wrap">
+                <span class="sub-label">02 / ROLES & EXECUTION</span>
+                <h2 class="title-display">WORK <span class="volt-text">EXPERIENCE</span></h2>
             </div>
 
-            <div class="timeline-compact">
+            <div class="experience-list">
 
-                <!-- 1. UGhar -->
-                <div class="xp-compact-card fade-in-up">
-                    <div class="xp-top-row">
-                        <div class="xp-role-group">
-                            <h3 class="xp-title">Product & Operations</h3>
-                            <span class="xp-company">UGhar (Hyperlocal Platform)</span>
+                <!-- UGhar -->
+                <div class="xp-item-minimal">
+                    <div class="xp-header-row">
+                        <div>
+                            <h3 class="xp-role-title">Product & Operations</h3>
+                            <span class="xp-org-name">UGhar (Hyperlocal Platform)</span>
                         </div>
-                        <span class="xp-date"><i class="fa-regular fa-calendar"></i> Jan 2026 – Present</span>
+                        <span class="xp-duration">Jan 2026 – Present</span>
                     </div>
-                    <ul class="xp-list">
+                    <ul class="xp-bullet-points">
                         <li>Built and launched a hyperlocal home-services web platform connecting local households with technicians in Jamshedpur.</li>
                         <li>Tested key user flows including OTP login, service selection, booking checkout, form submission, and confirmation.</li>
                         <li>Identified and resolved UI glitches, form errors, broken links, and layout issues during product testing.</li>
@@ -307,16 +251,16 @@
                     </ul>
                 </div>
 
-                <!-- 2. Kanjo -->
-                <div class="xp-compact-card fade-in-up">
-                    <div class="xp-top-row">
-                        <div class="xp-role-group">
-                            <h3 class="xp-title">Product & Market Research</h3>
-                            <span class="xp-company">Kanjo (<a href="https://kanjo.co.in/" target="_blank" class="text-link">kanjo.co.in</a>)</span>
+                <!-- Kanjo -->
+                <div class="xp-item-minimal">
+                    <div class="xp-header-row">
+                        <div>
+                            <h3 class="xp-role-title">Product & Market Research</h3>
+                            <span class="xp-org-name">Kanjo (<a href="https://kanjo.co.in/" target="_blank" class="link-volt">kanjo.co.in</a>)</span>
                         </div>
-                        <span class="xp-date"><i class="fa-regular fa-calendar"></i> Sep 2026 – Present</span>
+                        <span class="xp-duration">Sep 2026 – Present</span>
                     </div>
-                    <ul class="xp-list">
+                    <ul class="xp-bullet-points">
                         <li>Built and launched an anime discovery platform focused on helping users find anime based on mood and feelings.</li>
                         <li>Researched anime discovery habits and explored how mood-based discovery helps users find relevant shows faster.</li>
                         <li>Designed and tested mood-based discovery flows, content categorization, and user navigation.</li>
@@ -325,32 +269,32 @@
                     </ul>
                 </div>
 
-                <!-- 3. Tata Steel -->
-                <div class="xp-compact-card fade-in-up">
-                    <div class="xp-top-row">
-                        <div class="xp-role-group">
-                            <h3 class="xp-title">Finance Intern</h3>
-                            <span class="xp-company">Tata Steel Ltd</span>
+                <!-- Tata Steel -->
+                <div class="xp-item-minimal">
+                    <div class="xp-header-row">
+                        <div>
+                            <h3 class="xp-role-title">Finance Intern</h3>
+                            <span class="xp-org-name">Tata Steel Ltd</span>
                         </div>
-                        <span class="xp-date"><i class="fa-regular fa-calendar"></i> Jun 2024 – Jul 2024</span>
+                        <span class="xp-duration">Jun 2024 – Jul 2024</span>
                     </div>
-                    <ul class="xp-list">
+                    <ul class="xp-bullet-points">
                         <li>Analyzed 5-year financial datasets using Pivot Tables & Trend Analysis.</li>
                         <li>Prepared weekly KPI dashboards for 1,000+ employees.</li>
                         <li>Standardized Excel reporting templates to slash reporting time.</li>
                     </ul>
                 </div>
 
-                <!-- 4. Digital Remedy -->
-                <div class="xp-compact-card fade-in-up">
-                    <div class="xp-top-row">
-                        <div class="xp-role-group">
-                            <h3 class="xp-title">Marketing Intern</h3>
-                            <span class="xp-company">Digital Remedy Techies</span>
+                <!-- Digital Remedy -->
+                <div class="xp-item-minimal">
+                    <div class="xp-header-row">
+                        <div>
+                            <h3 class="xp-role-title">Marketing Intern</h3>
+                            <span class="xp-org-name">Digital Remedy Techies</span>
                         </div>
-                        <span class="xp-date"><i class="fa-regular fa-calendar"></i> Sep 2022 – Nov 2022</span>
+                        <span class="xp-duration">Sep 2022 – Nov 2022</span>
                     </div>
-                    <ul class="xp-list">
+                    <ul class="xp-bullet-points">
                         <li>Tracked campaign performance across Meta platforms (CTR, Leads).</li>
                         <li>Optimized campaigns resulting in ~25% engagement improvement.</li>
                     </ul>
@@ -361,73 +305,72 @@
     </section>
 
     <!-- Research & Analytics Section -->
-    <section id="research" class="section-padding view-section view-research view-all" style="background: rgba(255,255,255,0.015);">
+    <section id="research" class="content-section view-section view-research view-all">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <span class="section-tag">ANALYTICS & STUDIES</span>
-                <h2 class="section-title">Research & <span class="text-gradient-brand">Analytics</span></h2>
+            <div class="section-title-wrap">
+                <span class="sub-label">03 / QUANTITATIVE ANALYSIS</span>
+                <h2 class="title-display">RESEARCH & <span class="volt-text">STUDIES</span></h2>
             </div>
 
-            <div class="research-grid">
-
-                <div class="research-card fade-in-up">
-                    <span class="research-date">Jan 2024 – Apr 2024</span>
-                    <h3 class="research-title">ESG Mutual Fund Performance Analysis</h3>
-                    <p class="research-subtitle">Research Analyst @ DBE, University of Delhi</p>
-                    <p class="research-desc">Scraped & cleaned NAV data from NSE/AMFI using Python (Pandas). Applied Fama-French 3-Factor Model & Sharpe Ratio to analyze ESG fund volatility vs traditional benchmark funds.</p>
+            <div class="research-trio-grid">
+                <div class="research-box">
+                    <span class="box-date">Jan 2024 – Apr 2024</span>
+                    <h3 class="box-title">ESG Mutual Fund Performance</h3>
+                    <p class="box-org">Research Analyst @ DBE, University of Delhi</p>
+                    <p class="box-text">Scraped & cleaned NAV data from NSE/AMFI using Python (Pandas). Applied Fama-French 3-Factor Model & Sharpe Ratio to evaluate volatility correlation.</p>
                 </div>
 
-                <div class="research-card fade-in-up">
-                    <span class="research-date">2024</span>
-                    <h3 class="research-title">AI vs. Human Support Trust Gap</h3>
-                    <p class="research-subtitle">Customer Experience Study</p>
-                    <p class="research-desc">Designed survey to evaluate trust levels in chatbots vs human agents. Used Mann-Whitney U & Chi-Square tests to identify trust friction points and proposed a hybrid support model.</p>
+                <div class="research-box">
+                    <span class="box-date">2024</span>
+                    <h3 class="box-title">AI vs. Human Support Trust Gap</h3>
+                    <p class="box-org">Customer Experience Study</p>
+                    <p class="box-text">Designed survey to evaluate trust levels in chatbots vs human agents. Used Mann-Whitney U & Chi-Square tests to identify friction points and propose hybrid models.</p>
                 </div>
 
-                <div class="research-card fade-in-up">
-                    <span class="research-date">BIT Mesra</span>
-                    <h3 class="research-title">Workforce Sentiment Analysis</h3>
-                    <p class="research-subtitle">Capstone Project @ Concentrix BPO</p>
-                    <p class="research-desc">Conducted surveys across 100+ employees to identify workplace attrition patterns and operational improvements.</p>
+                <div class="research-box">
+                    <span class="box-date">BIT Mesra</span>
+                    <h3 class="box-title">Workforce Sentiment Study</h3>
+                    <p class="box-org">Capstone Project @ Concentrix BPO</p>
+                    <p class="box-text">Conducted surveys across 100+ employees to identify sentiment patterns and reduce workplace attrition.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Skills & Education Combined Section (Compact) -->
-    <section id="skills" class="section-padding view-section view-all">
+    <!-- Arsenal & Foundation Section -->
+    <section id="skills" class="content-section view-section view-all">
         <div class="container">
-            <div class="skills-edu-grid">
+            <div class="split-columns">
                 
-                <!-- Arsenal / Skills -->
-                <div class="skills-col fade-in-up">
-                    <h3 class="block-title"><i class="fa-solid fa-toolbox text-gradient-brand"></i> Skills & Arsenal</h3>
-                    <div class="skills-flex">
-                        <span class="skill-tag">Product Execution</span>
-                        <span class="skill-tag">User Flow QA</span>
-                        <span class="skill-tag">Market & Field Research</span>
-                        <span class="skill-tag">Firebase & Supabase</span>
-                        <span class="skill-tag">GitHub & Coolify</span>
-                        <span class="skill-tag">Advanced Excel</span>
-                        <span class="skill-tag">SQL & Python (Pandas)</span>
-                        <span class="skill-tag">Google Analytics 4</span>
-                        <span class="skill-tag">Pricing & Rate Cards</span>
+                <!-- Arsenal -->
+                <div class="column-box">
+                    <span class="sub-label">TOOLKIT</span>
+                    <h3 class="column-heading">ARSENAL</h3>
+                    <div class="skill-cloud">
+                        <span class="skill-badge-minimal">Product Execution</span>
+                        <span class="skill-badge-minimal">User Flow QA</span>
+                        <span class="skill-badge-minimal">Field Research</span>
+                        <span class="skill-badge-minimal">Firebase & Supabase</span>
+                        <span class="skill-badge-minimal">GitHub & Coolify</span>
+                        <span class="skill-badge-minimal">Advanced Excel</span>
+                        <span class="skill-badge-minimal">SQL & Python</span>
+                        <span class="skill-badge-minimal">GA4 Analytics</span>
                     </div>
                 </div>
 
-                <!-- Education / Foundation -->
-                <div class="edu-col fade-in-up">
-                    <h3 class="block-title"><i class="fa-solid fa-graduation-cap text-gradient-brand"></i> Foundation</h3>
-                    <div class="edu-card">
-                        <span class="edu-date">2023 – Present</span>
-                        <h4 class="edu-degree">MBA (Business Economics)</h4>
-                        <p class="edu-school">Department of Business Economics, University of Delhi</p>
+                <!-- Foundation -->
+                <div class="column-box">
+                    <span class="sub-label">ACADEMIC</span>
+                    <h3 class="column-heading">FOUNDATION</h3>
+                    <div class="edu-item">
+                        <span class="edu-yr">2023 – Present</span>
+                        <h4 class="edu-degree-title">MBA (Business Economics)</h4>
+                        <p class="edu-inst">Department of Business Economics, University of Delhi</p>
                     </div>
-                    <div class="edu-card" style="margin-top: 15px;">
-                        <span class="edu-date">Graduated</span>
-                        <h4 class="edu-degree">BBA (Bachelor of Business Administration)</h4>
-                        <p class="edu-school">Birla Institute of Technology, Mesra</p>
+                    <div class="edu-item" style="margin-top: 15px;">
+                        <span class="edu-yr">Graduated</span>
+                        <h4 class="edu-degree-title">BBA (Bachelor of Business Administration)</h4>
+                        <p class="edu-inst">Birla Institute of Technology, Mesra</p>
                     </div>
                 </div>
 
@@ -437,18 +380,20 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="container footer-container">
-            <h2 class="section-title">Let’s <span class="text-gradient-brand">Connect</span></h2>
-            <p class="footer-desc">Open to Product, Operations, and Business Strategy roles.</p>
+        <div class="container footer-content">
+            <h2 class="footer-title">LET’S BUILD SOMETHING <span class="volt-text">GREAT.</span></h2>
+            <p class="footer-tagline">Open to Product Execution, Operations, and Business Strategy Roles.</p>
 
-            <div class="social-links">
-                <a href="mailto:mangalsoren@zohomail.in" title="Email"><i class="fa-solid fa-envelope"></i> mangalsoren@zohomail.in</a>
-                <a href="tel:9771783048" title="Phone"><i class="fa-solid fa-phone"></i> +91 9771783048</a>
-                <a href="https://www.linkedin.com/in/mangal-soren-1312ba31a/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://x.com/Mangal977" target="_blank" title="X (Twitter)"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <div class="contact-links">
+                <a href="mailto:mangalsoren@zohomail.in" class="contact-btn"><i class="fa-solid fa-envelope"></i> mangalsoren@zohomail.in</a>
+                <a href="tel:9771783048" class="contact-btn"><i class="fa-solid fa-phone"></i> +91 9771783048</a>
+                <a href="https://www.linkedin.com/in/mangal-soren-1312ba31a/" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LINKEDIN</a>
+                <a href="https://x.com/Mangal977" target="_blank" class="contact-btn"><i class="fa-brands fa-twitter"></i> X (TWITTER)</a>
             </div>
 
-            <p class="copyright">&copy; 2026 Mangal Soren. Built with speed and precision.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MANGAL SOREN. EXECUTIVE PORTFOLIO.</p>
+            </div>
         </div>
     </footer>
 
