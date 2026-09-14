@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -37,28 +37,42 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Steven Bartlett Minimal Style) -->
+    <!-- Hero Section (Monochrome Minimal Luxury) -->
     <section class="hero-section">
-        <div class="container">
-            <div class="hero-header-badge">
-                <span class="status-indicator"></span> PRODUCT EXECUTION & OPERATIONS
-            </div>
-            
-            <h1 class="hero-title">MANGAL SOREN</h1>
-            
-            <p class="hero-tagline">
-                MBA (Business Economics) candidate specializing in building, testing, and operating early-stage digital products.
-                Currently scaling execution for <a href="https://www.ughar.in/" target="_blank" class="highlight-link">UGhar</a>, <a href="https://kanjo.co.in/" target="_blank" class="highlight-link">Kanjo</a>, <a href="https://www.creatorlytics.cloud/" target="_blank" class="highlight-link">Creatorlytics</a>, and <a href="https://creatigenhq.com/" target="_blank" class="highlight-link">CreatiGen</a>.
-            </p>
+        <div class="container hero-grid">
+            <div class="hero-text-col">
+                <div class="hero-header-badge">
+                    <span class="status-indicator"></span> PRODUCT EXECUTION & OPERATIONS
+                </div>
+                
+                <h1 class="hero-title">MANGAL SOREN</h1>
+                
+                <p class="hero-tagline">
+                    MBA (Business Economics) candidate specializing in building, testing, and operating early-stage digital products.
+                    Currently scaling execution for <a href="https://www.ughar.in/" target="_blank" class="highlight-link">UGhar</a>, <a href="https://kanjo.co.in/" target="_blank" class="highlight-link">Kanjo</a>, <a href="https://www.creatorlytics.cloud/" target="_blank" class="highlight-link">Creatorlytics</a>, and <a href="https://creatigenhq.com/" target="_blank" class="highlight-link">CreatiGen</a>.
+                </p>
 
-            <div class="hero-actions">
-                <a href="#work" class="btn-primary-volt">EXPLORE LIVE APPS <i class="fa-solid fa-arrow-down-right"></i></a>
-                <a href="#contact" class="btn-secondary-dark">LET’S CONNECT <i class="fa-solid fa-paper-plane"></i></a>
+                <div class="hero-actions">
+                    <a href="#work" class="btn-primary-white">EXPLORE LIVE APPS <i class="fa-solid fa-arrow-down-right"></i></a>
+                    <a href="#contact" class="btn-secondary-dark">LET’S CONNECT <i class="fa-solid fa-paper-plane"></i></a>
+                </div>
+            </div>
+
+            <!-- Profile Image Frame / Placeholder -->
+            <div class="hero-image-col">
+                <div class="portrait-frame">
+                    <img src="assets/profile.jpg" alt="Mangal Soren" class="portrait-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="portrait-fallback-box">
+                        <i class="fa-solid fa-user-tie fallback-icon"></i>
+                        <span class="fallback-text">MANGAL SOREN</span>
+                        <span class="fallback-sub">Product & Operations</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Minimal Tab Switcher -->
+    <!-- Sticky Filter Bar -->
     <div class="sticky-filter-bar">
         <div class="container filter-container">
             <button class="filter-tab active" onclick="filterView('all', this)">ALL OVERVIEW</button>
@@ -73,7 +87,7 @@
         <div class="container">
             <div class="section-title-wrap">
                 <span class="sub-label">01 / SHIPPED PRODUCTS</span>
-                <h2 class="title-display">LIVE <span class="volt-text">PLATFORMS</span></h2>
+                <h2 class="title-display">LIVE <span class="white-text">PLATFORMS</span></h2>
             </div>
 
             <div class="compact-grid">
@@ -81,7 +95,7 @@
                 <!-- UGhar -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <span class="badge-live-white"><span class="dot-green"></span> LIVE</span>
                         <a href="https://www.ughar.in/" target="_blank" class="card-domain-link">
                             ughar.in <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -91,10 +105,10 @@
                     <p class="card-summary">On-demand doorstep repair connecting households with technicians. Engineered 60s mobile booking, QR partner security, 4-digit OTP dispatch, and transparent ₹99 inspection pricing.</p>
                     
                     <div class="tag-row">
-                        <span class="tag-volt">Next.js</span>
-                        <span class="tag-volt">Supabase</span>
-                        <span class="tag-volt">Firebase Auth</span>
-                        <span class="tag-volt">₹99 Model</span>
+                        <span class="tag-white">Next.js</span>
+                        <span class="tag-white">Supabase</span>
+                        <span class="tag-white">Firebase Auth</span>
+                        <span class="tag-white">₹99 Model</span>
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
@@ -117,7 +131,7 @@
                 <!-- Kanjo -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <span class="badge-live-white"><span class="dot-green"></span> LIVE</span>
                         <a href="https://kanjo.co.in/" target="_blank" class="card-domain-link">
                             kanjo.co.in <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -127,9 +141,9 @@
                     <p class="card-summary">Discovery platform helping users find anime based on mood and emotional intent rather than rigid genres or ratings. Researched discovery habits and designed feeling-first navigation.</p>
                     
                     <div class="tag-row">
-                        <span class="tag-volt">Product Research</span>
-                        <span class="tag-volt">Intent UX</span>
-                        <span class="tag-volt">Theme Mapping</span>
+                        <span class="tag-white">Product Research</span>
+                        <span class="tag-white">Intent UX</span>
+                        <span class="tag-white">Theme Mapping</span>
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
@@ -152,7 +166,7 @@
                 <!-- Creatorlytics -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <span class="badge-live-white"><span class="dot-green"></span> LIVE</span>
                         <a href="https://www.creatorlytics.cloud/" target="_blank" class="card-domain-link">
                             creatorlytics.cloud <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -162,10 +176,10 @@
                     <p class="card-summary">CRM tool helping independent creators track brand deals, sponsorship pipelines, and cash flow operations. Listed on Product Hunt and approved on SaaS Hub.</p>
                     
                     <div class="tag-row">
-                        <span class="tag-volt">Product Hunt Listed</span>
-                        <span class="tag-volt">FastAPI</span>
-                        <span class="tag-volt">Supabase</span>
-                        <span class="tag-volt">GA4</span>
+                        <span class="tag-white">Product Hunt Listed</span>
+                        <span class="tag-white">FastAPI</span>
+                        <span class="tag-white">Supabase</span>
+                        <span class="tag-white">GA4</span>
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
@@ -188,7 +202,7 @@
                 <!-- CreatiGenHQ -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE BETA</span>
+                        <span class="badge-live-white"><span class="dot-green"></span> LIVE BETA</span>
                         <a href="https://creatigenhq.com/" target="_blank" class="card-domain-link">
                             creatigenhq.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -198,9 +212,9 @@
                     <p class="card-summary">Decision co-pilot built to eliminate the blank timeline problem by proposing rough-cut timelines while keeping full creative control with the creator.</p>
                     
                     <div class="tag-row">
-                        <span class="tag-volt">First Draft Engine</span>
-                        <span class="tag-volt">Decision Co-Pilot</span>
-                        <span class="tag-volt">X & Reddit Analytics</span>
+                        <span class="tag-white">First Draft Engine</span>
+                        <span class="tag-white">Decision Co-Pilot</span>
+                        <span class="tag-white">X & Reddit Analytics</span>
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
@@ -228,7 +242,7 @@
         <div class="container">
             <div class="section-title-wrap">
                 <span class="sub-label">02 / ROLES & EXECUTION</span>
-                <h2 class="title-display">WORK <span class="volt-text">EXPERIENCE</span></h2>
+                <h2 class="title-display">WORK <span class="white-text">EXPERIENCE</span></h2>
             </div>
 
             <div class="experience-list">
@@ -256,7 +270,7 @@
                     <div class="xp-header-row">
                         <div>
                             <h3 class="xp-role-title">Product & Market Research</h3>
-                            <span class="xp-org-name">Kanjo (<a href="https://kanjo.co.in/" target="_blank" class="link-volt">kanjo.co.in</a>)</span>
+                            <span class="xp-org-name">Kanjo (<a href="https://kanjo.co.in/" target="_blank" class="link-white">kanjo.co.in</a>)</span>
                         </div>
                         <span class="xp-duration">Sep 2026 – Present</span>
                     </div>
@@ -309,7 +323,7 @@
         <div class="container">
             <div class="section-title-wrap">
                 <span class="sub-label">03 / QUANTITATIVE ANALYSIS</span>
-                <h2 class="title-display">RESEARCH & <span class="volt-text">STUDIES</span></h2>
+                <h2 class="title-display">RESEARCH & <span class="white-text">STUDIES</span></h2>
             </div>
 
             <div class="research-trio-grid">
@@ -370,7 +384,7 @@
                     <div class="edu-item" style="margin-top: 15px;">
                         <span class="edu-yr">Graduated</span>
                         <h4 class="edu-degree-title">BBA (Bachelor of Business Administration)</h4>
-                        <p class="edu-inst">Birla Institute of Technology, Mesra</p>
+                        <p class="edu-school">Birla Institute of Technology, Mesra</p>
                     </div>
                 </div>
 
@@ -381,7 +395,7 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="container footer-content">
-            <h2 class="footer-title">LET’S BUILD SOMETHING <span class="volt-text">GREAT.</span></h2>
+            <h2 class="footer-title">LET’S BUILD SOMETHING <span class="white-text">GREAT.</span></h2>
             <p class="footer-tagline">Open to Product Execution, Operations, and Business Strategy Roles.</p>
 
             <div class="contact-links">

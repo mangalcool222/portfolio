@@ -1,11 +1,11 @@
-/* Steven Bartlett Inspired Minimal Luxury Aesthetic */
+/* Pure Ultra-Luxury Monochrome Aesthetic (Black & White Editorial) */
 :root {
     --bg-black: #050505;
-    --card-bg: #0c0d0e;
+    --card-bg: #0b0c0d;
     --card-border: rgba(255, 255, 255, 0.12);
     --text-white: #ffffff;
-    --text-muted: #888888;
-    --volt-accent: #ccff00; /* Acid Lime / Neon Volt */
+    --text-muted: #8e929a;
+    --text-accent: #ffffff;
     --font-display: 'Bebas Neue', 'Space Grotesk', sans-serif;
     --font-heading: 'Space Grotesk', -apple-system, sans-serif;
     --font-body: 'Inter', -apple-system, sans-serif;
@@ -49,12 +49,13 @@ ul {
     padding: 0 24px;
 }
 
-.volt-text {
-    color: var(--volt-accent);
+.white-text {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .dot-accent {
-    color: var(--volt-accent);
+    color: #ffffff;
 }
 
 /* Navbar */
@@ -65,7 +66,7 @@ ul {
     width: 100%;
     padding: 20px 0;
     z-index: 1000;
-    background: rgba(5, 5, 5, 0.9);
+    background: rgba(5, 5, 5, 0.92);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--card-border);
 }
@@ -93,7 +94,7 @@ ul {
     font-family: var(--font-heading);
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: var(--text-muted);
 }
 
@@ -102,22 +103,31 @@ ul {
 }
 
 .nav-cta {
-    background: var(--volt-accent);
+    background: #ffffff;
     color: #000000 !important;
-    padding: 8px 18px;
+    padding: 8px 20px;
     border-radius: 4px;
     font-weight: 700 !important;
+    letter-spacing: 1px;
 }
 
 .nav-cta:hover {
-    background: #ffffff;
+    background: #e0e0e0;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Hero Section */
 .hero-section {
     padding-top: 140px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: center;
 }
 
 .hero-header-badge {
@@ -128,21 +138,32 @@ ul {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--volt-accent);
-    margin-bottom: 15px;
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 18px;
 }
 
 .status-indicator {
     width: 8px;
     height: 8px;
-    background-color: var(--volt-accent);
+    background-color: #10b981;
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--volt-accent);
+    box-shadow: 0 0 10px #10b981;
+    animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 6rem;
+    font-size: 5.8rem;
     line-height: 0.9;
     letter-spacing: 2px;
     color: var(--text-white);
@@ -150,9 +171,8 @@ ul {
 }
 
 .hero-tagline {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
-    max-width: 850px;
     line-height: 1.6;
     margin-bottom: 35px;
 }
@@ -160,12 +180,12 @@ ul {
 .highlight-link {
     color: var(--text-white);
     text-decoration: underline;
-    text-decoration-color: var(--volt-accent);
+    text-decoration-color: rgba(255, 255, 255, 0.4);
     text-underline-offset: 4px;
 }
 
 .highlight-link:hover {
-    color: var(--volt-accent);
+    text-decoration-color: #ffffff;
 }
 
 .hero-actions {
@@ -173,14 +193,14 @@ ul {
     gap: 15px;
 }
 
-.btn-primary-volt {
-    background: var(--volt-accent);
-    color: #000;
+.btn-primary-white {
+    background: #ffffff;
+    color: #000000;
     font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 14px 30px;
+    padding: 14px 32px;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
@@ -188,10 +208,10 @@ ul {
     transition: var(--transition);
 }
 
-.btn-primary-volt:hover {
-    background: #ffffff;
+.btn-primary-white:hover {
+    background: #e5e5e5;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(204, 255, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .btn-secondary-dark {
@@ -202,7 +222,7 @@ ul {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 14px 30px;
+    padding: 14px 32px;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
@@ -212,7 +232,68 @@ ul {
 
 .btn-secondary-dark:hover {
     border-color: var(--text-white);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Portrait Frame */
+.portrait-frame {
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.portrait-frame:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-4px);
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(110%);
+    transition: filter 0.4s ease;
+}
+
+.portrait-frame:hover .portrait-img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+.portrait-fallback-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    color: var(--text-muted);
+}
+
+.fallback-icon {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 12px;
+}
+
+.fallback-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+    color: var(--text-white);
+}
+
+.fallback-sub {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
 }
 
 /* Sticky Filter Bar */
@@ -240,7 +321,7 @@ ul {
     font-family: var(--font-heading);
     font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     padding: 10px 22px;
     border-radius: 4px;
     cursor: pointer;
@@ -254,9 +335,9 @@ ul {
 }
 
 .filter-tab.active {
-    background: var(--volt-accent);
+    background: #ffffff;
     color: #000000;
-    border-color: var(--volt-accent);
+    border-color: #ffffff;
 }
 
 /* Content Sections */
@@ -273,7 +354,7 @@ ul {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--volt-accent);
+    color: var(--text-muted);
     display: block;
     margin-bottom: 5px;
 }
@@ -302,7 +383,7 @@ ul {
 }
 
 .card-minimal:hover {
-    border-color: var(--volt-accent);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-4px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
@@ -314,14 +395,14 @@ ul {
     margin-bottom: 15px;
 }
 
-.badge-live-volt {
+.badge-live-white {
     font-family: var(--font-heading);
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--volt-accent);
-    background: rgba(204, 255, 0, 0.08);
-    border: 1px solid rgba(204, 255, 0, 0.3);
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--card-border);
     padding: 3px 10px;
     border-radius: 4px;
     display: inline-flex;
@@ -332,7 +413,7 @@ ul {
 .dot-green {
     width: 6px;
     height: 6px;
-    background-color: var(--volt-accent);
+    background-color: #10b981;
     border-radius: 50%;
 }
 
@@ -348,9 +429,9 @@ ul {
 }
 
 .card-domain-link:hover {
-    background: var(--volt-accent);
+    background: #ffffff;
     color: #000;
-    border-color: var(--volt-accent);
+    border-color: #ffffff;
 }
 
 .card-heading {
@@ -379,7 +460,7 @@ ul {
     margin-bottom: 20px;
 }
 
-.tag-volt {
+.tag-white {
     font-size: 0.75rem;
     font-family: var(--font-heading);
     font-weight: 600;
@@ -411,8 +492,9 @@ ul {
 }
 
 .accordion-trigger:hover {
-    border-color: var(--volt-accent);
-    color: var(--volt-accent);
+    border-color: var(--text-white);
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .case-study-drawer {
@@ -437,7 +519,7 @@ ul {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--volt-accent);
+    color: var(--text-white);
     margin-top: 12px;
     margin-bottom: 4px;
 }
@@ -464,7 +546,7 @@ ul {
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--volt-accent);
+    color: var(--text-white);
 }
 
 /* Experience List */
@@ -502,7 +584,7 @@ ul {
 
 .xp-org-name {
     font-size: 0.9rem;
-    color: var(--volt-accent);
+    color: var(--text-muted);
     display: block;
 }
 
@@ -525,11 +607,11 @@ ul {
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--volt-accent);
+    color: var(--text-white);
 }
 
-.link-volt {
-    color: var(--volt-accent);
+.link-white {
+    color: var(--text-white);
     text-decoration: underline;
 }
 
@@ -549,13 +631,13 @@ ul {
 }
 
 .research-box:hover {
-    border-color: var(--volt-accent);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .box-date {
     font-family: var(--font-heading);
     font-size: 0.75rem;
-    color: var(--volt-accent);
+    color: var(--text-white);
     font-weight: 700;
 }
 
@@ -615,8 +697,8 @@ ul {
 }
 
 .skill-badge-minimal:hover {
-    border-color: var(--volt-accent);
-    color: var(--volt-accent);
+    border-color: var(--text-white);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .edu-item {
@@ -626,7 +708,7 @@ ul {
 .edu-yr {
     font-family: var(--font-heading);
     font-size: 0.75rem;
-    color: var(--volt-accent);
+    color: var(--text-white);
     font-weight: 700;
 }
 
@@ -685,9 +767,9 @@ footer {
 }
 
 .contact-btn:hover {
-    background: var(--volt-accent);
+    background: #ffffff;
     color: #000000;
-    border-color: var(--volt-accent);
+    border-color: #ffffff;
 }
 
 .footer-bottom {
@@ -705,6 +787,20 @@ footer {
 }
 
 /* Mobile Responsive */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image-col {
+        order: -1;
+    }
+
+    .portrait-frame {
+        height: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3.5rem;
