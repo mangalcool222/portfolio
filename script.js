@@ -235,18 +235,10 @@ function initSubtleCardTilt() {
 function initScrollReveal() {
     const revealTargets = document.querySelectorAll('.card-minimal, .process-card, .research-box, .xp-item-minimal, .playground-box, .qa-philosophy-box');
     
-    revealTargets.forEach(el => el.classList.add('fade-in-up'));
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealTargets.forEach(el => observer.observe(el));
+    revealTargets.forEach(el => {
+        el.classList.add('fade-in-up');
+        el.classList.add('visible');
+    });
 }
 
 // Tab Filter Logic
