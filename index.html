@@ -308,166 +308,242 @@
         </div>
     </section>
 
-    <!-- Interactive QA Testing Playground Section (The Killer Hook) -->
+    <!-- Visual Interactive Product Console Section -->
     <section id="playground" class="content-section view-section view-all">
         <div class="container">
             <div class="section-title-wrap">
-                <span class="sub-label">LIVE INTERACTIVE PROOF</span>
-                <h2 class="title-display">TESTING <span class="volt-text">PLAYGROUND</span></h2>
+                <span class="sub-label">LIVE PRODUCT EXPERIENCES</span>
+                <h2 class="title-display">INTERACTIVE <span class="volt-text">CONSOLE</span></h2>
             </div>
 
-            <!-- Sandbox 2-Tab Bar Switcher -->
+            <!-- Console 3-Tab Switcher Bar -->
             <div class="sandbox-tab-bar">
-                <button type="button" class="sandbox-tab active" onclick="switchSandboxTab('ughar', this)">
-                    <i class="fa-solid fa-bolt"></i> ⚡ UGhar Dispatch & Fee Engine
+                <button type="button" class="sandbox-tab active" onclick="switchConsoleTab('ughar', this)">
+                    <i class="fa-solid fa-bolt"></i> ⚡ UGhar 60s Dispatch
                 </button>
-                <button type="button" class="sandbox-tab" onclick="switchSandboxTab('creatorlytics', this)">
-                    <i class="fa-solid fa-chart-line"></i> 📊 Creatorlytics Deal & Margin Calculator
+                <button type="button" class="sandbox-tab" onclick="switchConsoleTab('kanjo', this)">
+                    <i class="fa-solid fa-clapperboard"></i> 🟢 Kanjo Mood Discovery
+                </button>
+                <button type="button" class="sandbox-tab" onclick="switchConsoleTab('creatorlytics', this)">
+                    <i class="fa-solid fa-chart-pie"></i> 📊 Creatorlytics CRM Pipeline
                 </button>
             </div>
 
             <div class="playground-grid">
                 
-                <!-- TAB 1: UGhar Dispatch & Fee Engine Panel -->
-                <div id="ugharSandboxPanel" class="playground-box sandbox-panel active">
+                <!-- CONSOLE 1: UGhar Dispatch Simulator -->
+                <div id="ugharConsolePanel" class="playground-box console-panel active">
                     <div class="playground-header">
-                        <span class="badge-live-volt"><i class="fa-solid fa-house"></i> UGHAR HYPERLOCAL ENGINE</span>
-                        <span class="playground-sub">Service Dispatch & Boundary QA</span>
+                        <span class="badge-live-volt"><i class="fa-solid fa-house"></i> UGHAR LIVE DISPATCH</span>
+                        <span class="playground-sub">60s Technician Booking Flow</span>
                     </div>
 
-                    <p class="playground-instructions">
-                        Simulate technician dispatch, test inspection fee boundary rules (₹99 model), and generate live 4-digit security OTPs.
-                    </p>
-
-                    <!-- Service Picker Chips -->
-                    <div class="service-selector-group">
-                        <label class="input-label">Select Hyperlocal Service</label>
-                        <div class="service-chips-row">
-                            <button type="button" class="service-chip active" onclick="selectUGharService(this, '99')">AC Repair (₹99)</button>
-                            <button type="button" class="service-chip" onclick="selectUGharService(this, '99')">Plumbing (₹99)</button>
-                            <button type="button" class="service-chip" onclick="selectUGharService(this, '149')">Electrical Checkup (₹149)</button>
+                    <!-- Step 1: Visual Service Selection Grid -->
+                    <div class="console-step-group">
+                        <label class="input-label">STEP 1: SELECT REPAIR SERVICE</label>
+                        <div class="visual-service-grid">
+                            <div class="visual-service-card active" onclick="selectConsoleService(this, 'AC Servicing & Repair', '99')">
+                                <div class="vcard-icon"><i class="fa-solid fa-snowflake"></i></div>
+                                <div class="vcard-info">
+                                    <strong>AC Repair & Checkup</strong>
+                                    <span class="vcard-fee">₹99 Inspection Fee</span>
+                                </div>
+                            </div>
+                            <div class="visual-service-card" onclick="selectConsoleService(this, 'Plumbing & Leakage Repair', '99')">
+                                <div class="vcard-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                                <div class="vcard-info">
+                                    <strong>Plumbing & Leakage</strong>
+                                    <span class="vcard-fee">₹99 Inspection Fee</span>
+                                </div>
+                            </div>
+                            <div class="visual-service-card" onclick="selectConsoleService(this, 'Electrical Short Circuit', '149')">
+                                <div class="vcard-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                <div class="vcard-info">
+                                    <strong>Electrical Fixes</strong>
+                                    <span class="vcard-fee">₹149 Inspection Fee</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="test-input-group">
-                        <label for="ugharFeeInput" class="input-label">Enter Inspection Fee Amount (₹)</label>
-                        <div class="input-wrapper">
-                            <span class="currency-symbol">₹</span>
-                            <input type="text" id="ugharFeeInput" class="qa-input" value="99" placeholder="e.g. 99, -50, 0, 75000" oninput="testUGharDispatch(this.value)" autocomplete="off">
-                            <button type="button" onclick="testUGharDispatch(document.getElementById('ugharFeeInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-paper-plane"></i> DISPATCH</button>
+                    <!-- Step 2: Location Sector Pills -->
+                    <div class="console-step-group" style="margin-top: 15px;">
+                        <label class="input-label">STEP 2: SELECT JAMSHEDPUR SECTOR</label>
+                        <div class="sector-pills-row">
+                            <button type="button" class="sector-pill active" onclick="selectSector(this, 'Bistupur Hub')">Bistupur</button>
+                            <button type="button" class="sector-pill" onclick="selectSector(this, 'Sakchi Sector')">Sakchi</button>
+                            <button type="button" class="sector-pill" onclick="selectSector(this, 'Sonari Circle')">Sonari</button>
+                            <button type="button" class="sector-pill" onclick="selectSector(this, 'Kadma Sector')">Kadma</button>
                         </div>
                     </div>
 
-                    <div class="preset-chips">
-                        <span class="chip-label">Quick Scenarios:</span>
-                        <button type="button" class="preset-chip" onclick="setUGharPreset('99')">₹99 (Valid)</button>
-                        <button type="button" class="preset-chip" onclick="setUGharPreset('-50')">-50 (Negative)</button>
-                        <button type="button" class="preset-chip" onclick="setUGharPreset('abc')">abc (String)</button>
-                        <button type="button" class="preset-chip" onclick="setUGharPreset('0')">₹0 (Zero Fee)</button>
-                        <button type="button" class="preset-chip" onclick="setUGharPreset('75000')">₹75,000 (Over Limit)</button>
-                        <button type="button" class="preset-chip chip-error-toggle" onclick="simulateUGharEdgeCase()"><i class="fa-solid fa-bug"></i> Edge Case Error</button>
-                    </div>
+                    <!-- Action Dispatch Button -->
+                    <button type="button" class="btn-primary-volt btn-full-dispatch" onclick="triggerUGharDispatch()"><i class="fa-solid fa-paper-plane"></i> ⚡ REQUEST 60s DISPATCH</button>
 
-                    <!-- Live Validation Feedback & Dispatch Log Box -->
-                    <div id="ugharResultBox" class="qa-result-box valid">
-                        <div class="result-status-header">
-                            <span id="ugharResultIcon"><i class="fa-solid fa-circle-check"></i></span>
-                            <span id="ugharResultStatus">PASSED VALIDATION & DISPATCH READY</span>
+                    <!-- Step 3: Live Dispatch Screen Output -->
+                    <div id="dispatchScreen" class="dispatch-screen-box">
+                        <div id="radarPingWrap" class="radar-ping-wrap" style="display: none;">
+                            <div class="radar-pulse"></div>
+                            <span class="radar-status-text"><i class="fa-solid fa-compass fa-spin"></i> Pinging nearest verified technician in <span id="selectedSectorName">Bistupur Hub</span>...</span>
                         </div>
-                        <p id="ugharResultDetail" class="result-detail-text">Inspection fee ₹99 passes boundary checks. Generating dispatch payload...</p>
-                        
-                        <!-- Simulated Dispatch OTP & Log -->
-                        <div id="ugharDispatchDetails" class="dispatch-details-row">
-                            <div class="otp-badge"><i class="fa-solid fa-key"></i> 4-DIGIT OTP: <strong id="ugharOtpCode">4829</strong></div>
-                            <div class="tech-log-text"><i class="fa-solid fa-user-gear"></i> <span id="ugharTechLog">Technician #402 Assigned • Sakchi Sector</span></div>
+
+                        <div id="techAssignmentCard" class="tech-assignment-card" style="display: flex;">
+                            <div class="tech-avatar-wrap">
+                                <div class="tech-avatar-circle">RK</div>
+                                <span class="tech-badge-online"></span>
+                            </div>
+                            <div class="tech-details-info">
+                                <div class="tech-top-row">
+                                    <h4 class="tech-name">Rahul Kumar <span class="tech-rating">4.9 ★ (140+ jobs)</span></h4>
+                                    <span class="otp-pill">OTP: <strong id="dispatchOtpCode">4829</strong></span>
+                                </div>
+                                <p class="tech-sub-text">Assigned Partner • Sakchi Sector • <strong>ETA 12 Mins</strong></p>
+                                <div class="tech-fee-summary">
+                                    <span class="fee-badge-green"><i class="fa-solid fa-circle-check"></i> Doorstep Inspection: <strong id="dispatchFeeText">₹99</strong> (Waived upon repair)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TAB 2: Creatorlytics Deal & Margin Calculator Panel -->
-                <div id="creatorlyticsSandboxPanel" class="playground-box sandbox-panel" style="display: none;">
+                <!-- CONSOLE 2: Kanjo Mood Discovery Engine Panel -->
+                <div id="kanjoConsolePanel" class="playground-box console-panel" style="display: none;">
                     <div class="playground-header">
-                        <span class="badge-live-volt"><i class="fa-solid fa-chart-line"></i> CREATORLYTICS CRM ENGINE</span>
-                        <span class="playground-sub">Sponsorship Deal & Margin Calculator</span>
+                        <span class="badge-live-volt"><i class="fa-solid fa-clapperboard"></i> KANJO DISCOVERY ENGINE</span>
+                        <span class="playground-sub">Feeling-First Intent Matcher</span>
                     </div>
 
                     <p class="playground-instructions">
-                        Calculate platform commission margins, creator net payout, and test brand deal transaction boundary limits.
+                        Traditional search forces users to scroll 20+ mins by genre. Select a mood to test feeling-first recommendation mapping.
                     </p>
 
-                    <div class="test-input-group">
-                        <label for="dealAmountInput" class="input-label">Enter Brand Deal Amount (₹)</label>
-                        <div class="input-wrapper">
-                            <span class="currency-symbol">₹</span>
-                            <input type="text" id="dealAmountInput" class="qa-input" value="50000" placeholder="e.g. 50000, -10000, 0, 1500000" oninput="testCreatorlyticsDeal(this.value)" autocomplete="off">
-                            <button type="button" onclick="testCreatorlyticsDeal(document.getElementById('dealAmountInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-calculator"></i> CALCULATE</button>
+                    <!-- Mood Chips Selection -->
+                    <div class="mood-chips-row">
+                        <button type="button" class="mood-pill active" onclick="filterKanjoMood(this, 'chill')">🌆 Chill & Unwind</button>
+                        <button type="button" class="mood-pill" onclick="filterKanjoMood(this, 'thrill')">⚡ Adrenaline Rush</button>
+                        <button type="button" class="mood-pill" onclick="filterKanjoMood(this, 'mystery')">🧠 Mind-Bending</button>
+                        <button type="button" class="mood-pill" onclick="filterKanjoMood(this, 'emotional')">😭 Emotional Rollercoaster</button>
+                    </div>
+
+                    <!-- Visual Recommendations Stream -->
+                    <div id="kanjoStreamGrid" class="kanjo-stream-grid">
+                        <div class="kanjo-card-item">
+                            <div class="kanjo-card-top">
+                                <span class="match-score-badge">98% INTENT MATCH</span>
+                                <span class="anime-year">2021 • 12 EPS</span>
+                            </div>
+                            <h4 class="anime-card-title">Frieren: Beyond Journey's End</h4>
+                            <p class="anime-card-tagline">Deep, calm reflection on time, memory, and post-adventure nostalgia.</p>
+                            <div class="anime-tag-list">
+                                <span>Healing</span>
+                                <span>Atmospheric</span>
+                                <span>Peaceful</span>
+                            </div>
+                        </div>
+
+                        <div class="kanjo-card-item">
+                            <div class="kanjo-card-top">
+                                <span class="match-score-badge">95% INTENT MATCH</span>
+                                <span class="anime-year">2022 • 12 EPS</span>
+                            </div>
+                            <h4 class="anime-card-title">Bocchi the Rock!</h4>
+                            <p class="anime-card-tagline">Relatable introverted humor with cozy musical bonding energy.</p>
+                            <div class="anime-tag-list">
+                                <span>Cozy</span>
+                                <span>Music</span>
+                                <span>Comedy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONSOLE 3: Creatorlytics CRM Pipeline Panel -->
+                <div id="creatorlyticsConsolePanel" class="playground-box console-panel" style="display: none;">
+                    <div class="playground-header">
+                        <span class="badge-live-volt"><i class="fa-solid fa-chart-pie"></i> CREATORLYTICS CRM</span>
+                        <span class="playground-sub">Sponsorship & Deal Manager</span>
+                    </div>
+
+                    <p class="playground-instructions">
+                        Click deal stage buttons below to simulate advancing brand sponsorships from lead stage to closed payment.
+                    </p>
+
+                    <!-- Interactive Kanban Board Cards -->
+                    <div class="crm-pipeline-board">
+                        <div class="crm-deal-card">
+                            <div class="deal-top-row">
+                                <span class="brand-logo-badge"><i class="fa-solid fa-shoe-prints"></i> Nike India</span>
+                                <span id="dealStageBadge1" class="stage-pill stage-won">CLOSED & PAID</span>
+                            </div>
+                            <h4 class="deal-title">Quarterly Reel & Campaign Sponsorship</h4>
+                            <div class="deal-value-row">
+                                <span>Deal Amount: <strong>₹75,000</strong></span>
+                                <button type="button" class="btn-stage-toggle" onclick="toggleDealStage(1)">Advance Stage</button>
+                            </div>
+                        </div>
+
+                        <div class="crm-deal-card">
+                            <div class="deal-top-row">
+                                <span class="brand-logo-badge"><i class="fa-solid fa-utensils"></i> Swiggy Instamart</span>
+                                <span id="dealStageBadge2" class="stage-pill stage-pending">IN NEGOTIATION</span>
+                            </div>
+                            <h4 class="deal-title">Dedicated App Integration Video</h4>
+                            <div class="deal-value-row">
+                                <span>Deal Amount: <strong>₹25,000</strong></span>
+                                <button type="button" class="btn-stage-toggle" onclick="toggleDealStage(2)">Advance Stage</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="preset-chips">
-                        <span class="chip-label">Quick Scenarios:</span>
-                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('50000')">₹50,000 (Standard)</button>
-                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('-10000')">-10k (Negative)</button>
-                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('abc')">abc (String)</button>
-                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('0')">₹0 (Zero Deal)</button>
-                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('1500000')">₹15 Lakhs (High Deal)</button>
-                        <button type="button" class="preset-chip chip-error-toggle" onclick="simulateCreatorlyticsEdgeCase()"><i class="fa-solid fa-bug"></i> Edge Case Error</button>
-                    </div>
-
-                    <!-- Live Deal Calculation Result Box -->
-                    <div id="creatorlyticsResultBox" class="qa-result-box valid">
-                        <div class="result-status-header">
-                            <span id="clResultIcon"><i class="fa-solid fa-circle-check"></i></span>
-                            <span id="clResultStatus">SANITY PASSED & MARGIN CALCULATED</span>
+                    <!-- Revenue Ticker -->
+                    <div class="revenue-ticker-box">
+                        <div class="ticker-col">
+                            <span class="ticker-label">Total Pipeline Revenue</span>
+                            <strong id="crmTotalRevenue" class="ticker-val">₹1,00,000</strong>
                         </div>
-                        <p id="clResultDetail" class="result-detail-text">Brand deal payload ₹50,000 verified. Platform commission breakdown calculated.</p>
-
-                        <!-- Margin Breakdown Grid -->
-                        <div id="clMarginBreakdown" class="margin-breakdown-grid">
-                            <div class="margin-card">
-                                <span class="margin-label">10% Platform Cut</span>
-                                <strong id="clPlatformCut" class="margin-value">₹5,000</strong>
-                            </div>
-                            <div class="margin-card">
-                                <span class="margin-label">Net Creator Payout</span>
-                                <strong id="clNetPayout" class="margin-value volt-text">₹45,000</strong>
-                            </div>
+                        <div class="ticker-col">
+                            <span class="ticker-label">10% Platform Cut</span>
+                            <strong id="crmPlatformCut" class="ticker-val">₹10,000</strong>
+                        </div>
+                        <div class="ticker-col">
+                            <span class="ticker-label">Net Creator Payout</span>
+                            <strong id="crmNetPayout" class="ticker-val volt-text">₹90,000</strong>
                         </div>
                     </div>
                 </div>
 
                 <!-- QA Philosophy Panel -->
                 <div class="qa-philosophy-box">
-                    <span class="sub-label">WHAT I CHECK IN EVERY BUILD</span>
-                    <h3 class="qa-phil-title">QA & EDGE CASE CHECKLIST</h3>
+                    <span class="sub-label">PRODUCT CORE</span>
+                    <h3 class="qa-phil-title">HOW I ENSURE QUALITY</h3>
                     
                     <ul class="qa-check-list">
                         <li>
                             <i class="fa-solid fa-check-double volt-icon"></i>
                             <div>
-                                <strong>Input Validation & Sanitization</strong>
-                                <p>Strip unsafe strings, SQL injection vectors, and malformed currency inputs.</p>
+                                <strong>Frictionless User Journeys</strong>
+                                <p>60s booking dispatches, zero-login intent search, and 1-tap CRM actions.</p>
                             </div>
                         </li>
                         <li>
                             <i class="fa-solid fa-shield-halved volt-icon"></i>
                             <div>
-                                <strong>Boundary Value Analysis (BVA)</strong>
-                                <p>Test min/max operational limits (e.g. ₹0 vs ₹50,000 inspection & deal caps).</p>
+                                <strong>Edge Case Boundary Limits</strong>
+                                <p>Strict input sanitization, negative fee rejection, and zero-value transaction caps.</p>
                             </div>
                         </li>
                         <li>
                             <i class="fa-solid fa-key volt-icon"></i>
                             <div>
-                                <strong>Security & OTP Dispatch QA</strong>
-                                <p>Verify 4-digit OTP generation, dispatch state sync, and partner QR validation.</p>
+                                <strong>Security & OTP Verification</strong>
+                                <p>4-digit OTP dispatch sync, partner QR verification, and Firebase Auth sessions.</p>
                             </div>
                         </li>
                         <li>
                             <i class="fa-solid fa-mobile-screen-button volt-icon"></i>
                             <div>
-                                <strong>Viewport & Touch Target QA</strong>
-                                <p>Verify responsive mobile drawers, form submit accessibility, and 60s checkout UX.</p>
+                                <strong>Mobile Touch Optimization</strong>
+                                <p>Tested on 10+ mobile viewports with 48px+ touch targets for seamless UX.</p>
                             </div>
                         </li>
                     </ul>

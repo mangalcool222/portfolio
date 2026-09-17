@@ -1437,58 +1437,74 @@ footer {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 2-Tab Sandbox Switcher Bar */
-.sandbox-tab-bar {
+/* Product Console UI Components */
+.console-panel {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
-.sandbox-tab {
-    background: rgba(255, 255, 255, 0.04);
+.console-step-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.visual-service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.visual-service-card {
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--card-border);
-    color: var(--text-muted);
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 8px;
+    padding: 12px 14px;
     cursor: pointer;
     transition: var(--transition);
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
-.sandbox-tab:hover {
-    color: var(--text-white);
+.visual-service-card:hover {
     border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
 }
 
-.sandbox-tab.active {
-    background: var(--volt-accent);
-    color: #000000;
+.visual-service-card.active {
     border-color: var(--volt-accent);
+    background: rgba(204, 255, 0, 0.08);
 }
 
-.service-selector-group {
-    margin-bottom: 16px;
+.vcard-icon {
+    font-size: 1.3rem;
+    color: var(--volt-accent);
 }
 
-.service-chips-row {
+.vcard-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.vcard-info strong {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    color: var(--text-white);
+}
+
+.vcard-fee {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.sector-pills-row {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 6px;
 }
 
-.service-chip {
+.sector-pill {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--card-border);
     color: var(--text-muted);
@@ -1496,115 +1512,372 @@ footer {
     font-size: 0.78rem;
     font-weight: 600;
     padding: 6px 14px;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     transition: var(--transition);
 }
 
-.service-chip:hover {
-    color: var(--text-white);
-    border-color: rgba(255, 255, 255, 0.3);
+.sector-pill.active, .sector-pill:hover {
+    border-color: var(--volt-accent);
+    color: var(--volt-accent);
+    background: rgba(204, 255, 0, 0.08);
 }
 
-.service-chip.active {
+.btn-full-dispatch {
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 14px !important;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dispatch Output Screen & Radar Animation */
+.dispatch-screen-box {
+    background: #000000;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.radar-ping-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--volt-accent);
+}
+
+.radar-pulse {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--volt-accent);
+    box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.7);
+    animation: radarPulseAnim 1.4s infinite;
+}
+
+@keyframes radarPulseAnim {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.8); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 14px rgba(204, 255, 0, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(204, 255, 0, 0); }
+}
+
+.radar-status-text {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Technician Card */
+.tech-assignment-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.tech-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.tech-avatar-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #151515;
+    border: 2px solid var(--volt-accent);
+    color: var(--volt-accent);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.tech-badge-online {
+    width: 10px;
+    height: 10px;
+    background: #2ecc71;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.tech-details-info {
+    flex-grow: 1;
+}
+
+.tech-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.tech-name {
+    font-size: 1rem;
+    color: var(--text-white);
+}
+
+.tech-rating {
+    font-size: 0.78rem;
+    color: var(--volt-accent);
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.otp-pill {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    background: rgba(204, 255, 0, 0.1);
+    border: 1px solid rgba(204, 255, 0, 0.3);
+    color: var(--text-white);
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.otp-pill strong {
+    color: var(--volt-accent);
+    letter-spacing: 1px;
+}
+
+.tech-sub-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.fee-badge-green {
+    font-size: 0.78rem;
+    color: #2ecc71;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Kanjo Mood Console Styles */
+.mood-chips-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.mood-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mood-pill.active, .mood-pill:hover {
     background: rgba(204, 255, 0, 0.12);
     color: var(--volt-accent);
     border-color: var(--volt-accent);
 }
 
-.chip-error-toggle {
-    border-color: rgba(231, 76, 60, 0.4) !important;
-    color: #e74c3c !important;
-    background: rgba(231, 76, 60, 0.06) !important;
-}
-
-.chip-error-toggle:hover {
-    background: rgba(231, 76, 60, 0.15) !important;
-    border-color: #e74c3c !important;
-}
-
-/* Dispatch Details OTP & Log */
-.dispatch-details-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.12);
-    flex-wrap: wrap;
-}
-
-.otp-badge {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    font-weight: 700;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--card-border);
-    padding: 4px 12px;
-    border-radius: 4px;
-    color: var(--text-white);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.otp-badge strong {
-    color: var(--volt-accent);
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-}
-
-.tech-log-text {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Margin Breakdown Grid */
-.margin-breakdown-grid {
+.kanjo-stream-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
-.margin-card {
-    background: rgba(0, 0, 0, 0.3);
+.kanjo-card-item {
+    background: #000000;
     border: 1px solid var(--card-border);
-    padding: 10px 14px;
-    border-radius: 6px;
+    border-radius: 8px;
+    padding: 16px;
+    transition: var(--transition);
+}
+
+.kanjo-card-item:hover {
+    border-color: var(--volt-accent);
+}
+
+.kanjo-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.match-score-badge {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--volt-accent);
+    background: rgba(204, 255, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.anime-year {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.anime-card-title {
+    font-size: 1rem;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+.anime-card-tagline {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.anime-tag-list {
+    display: flex;
+    gap: 6px;
+}
+
+.anime-tag-list span {
+    font-size: 0.68rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Creatorlytics CRM Console Styles */
+.crm-pipeline-board {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.crm-deal-card {
+    background: #000000;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.deal-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.brand-logo-badge {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--volt-accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stage-pill {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.stage-won {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.stage-pending {
+    background: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.4);
+}
+
+.deal-title {
+    font-size: 0.95rem;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.deal-value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-stage-toggle {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--card-border);
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-stage-toggle:hover {
+    background: var(--volt-accent);
+    color: #000;
+    border-color: var(--volt-accent);
+}
+
+.revenue-ticker-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #000000;
+    border: 1px dashed var(--card-border);
+    padding: 14px;
+    border-radius: 8px;
+}
+
+.ticker-col {
     display: flex;
     flex-direction: column;
 }
 
-.margin-label {
+.ticker-label {
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
-    font-weight: 600;
 }
 
-.margin-value {
+.ticker-val {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-white);
-    margin-top: 2px;
 }
 
 @media (max-width: 768px) {
-    .sandbox-tab-bar {
-        flex-direction: column;
-    }
-    
-    .margin-breakdown-grid {
+    .visual-service-grid, .kanjo-stream-grid, .revenue-ticker-box {
         grid-template-columns: 1fr;
     }
 }
+
 
         grid-template-columns: 1fr;
     }

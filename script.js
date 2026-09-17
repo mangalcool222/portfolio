@@ -41,216 +41,149 @@ function updateIstClock() {
 setInterval(updateIstClock, 1000);
 updateIstClock();
 
-// Sandbox Tab Switcher Logic (UGhar vs Creatorlytics)
-function switchSandboxTab(tabId, btn) {
+// Console Tab Switcher Logic (UGhar, Kanjo, Creatorlytics)
+function switchConsoleTab(consoleId, btn) {
     if (btn) {
         document.querySelectorAll('.sandbox-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
     }
 
-    const ugharPanel = document.getElementById('ugharSandboxPanel');
-    const creatorlyticsPanel = document.getElementById('creatorlyticsSandboxPanel');
+    const ugharPanel = document.getElementById('ugharConsolePanel');
+    const kanjoPanel = document.getElementById('kanjoConsolePanel');
+    const creatorlyticsPanel = document.getElementById('creatorlyticsConsolePanel');
 
-    if (tabId === 'ughar') {
-        if (ugharPanel) ugharPanel.style.display = 'flex';
-        if (creatorlyticsPanel) creatorlyticsPanel.style.display = 'none';
-        testUGharDispatch(document.getElementById('ugharFeeInput')?.value || '99');
-    } else if (tabId === 'creatorlytics') {
-        if (ugharPanel) ugharPanel.style.display = 'none';
-        if (creatorlyticsPanel) creatorlyticsPanel.style.display = 'flex';
-        testCreatorlyticsDeal(document.getElementById('dealAmountInput')?.value || '50000');
-    }
+    if (ugharPanel) ugharPanel.style.display = consoleId === 'ughar' ? 'flex' : 'none';
+    if (kanjoPanel) kanjoPanel.style.display = consoleId === 'kanjo' ? 'flex' : 'none';
+    if (creatorlyticsPanel) creatorlyticsPanel.style.display = consoleId === 'creatorlytics' ? 'flex' : 'none';
 }
 
-// Service Selector Chip for UGhar
-function selectUGharService(chipBtn, defaultFee) {
-    if (!chipBtn) return;
-    document.querySelectorAll('.service-chip').forEach(c => c.classList.remove('active'));
-    chipBtn.classList.add('active');
+// UGhar Visual Console Interaction Logic
+let currentConsoleServiceFee = '99';
+let currentConsoleSector = 'Bistupur Hub';
 
-    const input = document.getElementById('ugharFeeInput');
-    if (input) {
-        input.value = defaultFee;
-        testUGharDispatch(defaultFee);
-    }
+function selectConsoleService(cardBtn, serviceName, fee) {
+    if (!cardBtn) return;
+    document.querySelectorAll('.visual-service-card').forEach(c => c.classList.remove('active'));
+    cardBtn.classList.add('active');
+    currentConsoleServiceFee = fee;
+    
+    const feeEl = document.getElementById('dispatchFeeText');
+    if (feeEl) feeEl.textContent = `₹${fee}`;
 }
 
-// UGhar Dispatch & Fee Engine Validation Logic
-function setUGharPreset(val) {
-    const input = document.getElementById('ugharFeeInput');
-    if (input) {
-        input.value = val;
-        testUGharDispatch(val);
-    }
+function selectSector(pillBtn, sectorName) {
+    if (!pillBtn) return;
+    document.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
+    pillBtn.classList.add('active');
+    currentConsoleSector = sectorName;
+    
+    const sectorEl = document.getElementById('selectedSectorName');
+    if (sectorEl) sectorEl.textContent = sectorName;
 }
 
-function simulateUGharEdgeCase() {
-    setUGharPreset('-50');
+function triggerUGharDispatch() {
+    const pingWrap = document.getElementById('radarPingWrap');
+    const techCard = document.getElementById('techAssignmentCard');
+    const otpEl = document.getElementById('dispatchOtpCode');
+
+    if (!pingWrap || !techCard) return;
+
+    // Show animated radar pulse
+    pingWrap.style.display = 'flex';
+    techCard.style.display = 'none';
+
+    setTimeout(() => {
+        pingWrap.style.display = 'none';
+        techCard.style.display = 'flex';
+        if (otpEl) {
+            otpEl.textContent = Math.floor(1000 + Math.random() * 9000);
+        }
+    }, 700);
 }
 
-function testUGharDispatch(rawVal) {
-    const box = document.getElementById('ugharResultBox');
-    const icon = document.getElementById('ugharResultIcon');
-    const status = document.getElementById('ugharResultStatus');
-    const detail = document.getElementById('ugharResultDetail');
-    const detailsRow = document.getElementById('ugharDispatchDetails');
-    const otpCode = document.getElementById('ugharOtpCode');
-    const techLog = document.getElementById('ugharTechLog');
+// Kanjo Mood Filtering Logic
+const animeMoodData = {
+    chill: [
+        { title: "Frieren: Beyond Journey's End", score: "98% INTENT MATCH", year: "2021 • 12 EPS", tag: "Deep, calm reflection on time, memory, and post-adventure nostalgia.", tags: ["Healing", "Atmospheric", "Peaceful"] },
+        { title: "Bocchi the Rock!", score: "95% INTENT MATCH", year: "2022 • 12 EPS", tag: "Relatable introverted humor with cozy musical bonding energy.", tags: ["Cozy", "Music", "Comedy"] }
+    ],
+    thrill: [
+        { title: "Attack on Titan", score: "99% INTENT MATCH", year: "2013-2023 • 89 EPS", tag: "High-stakes survival, intense plot twists, and adrenaline action.", tags: ["Action", "Survival", "High Stakes"] },
+        { title: "Solo Leveling", score: "96% INTENT MATCH", year: "2024 • 12 EPS", tag: "Pure power-scaling progression and intense combat sequences.", tags: ["Action", "Overpowered", "Hype"] }
+    ],
+    mystery: [
+        { title: "Steins;Gate", score: "99% INTENT MATCH", year: "2011 • 24 EPS", tag: "Mind-bending time travel thriller with tight cause-and-effect logic.", tags: ["Sci-Fi", "Time Travel", "Thriller"] },
+        { title: "Monster", score: "97% INTENT MATCH", year: "2004 • 74 EPS", tag: "Dark psychological cat-and-mouse mystery set in post-Cold War Europe.", tags: ["Psychological", "Noir", "Suspense"] }
+    ],
+    emotional: [
+        { title: "Your Lie in April", score: "98% INTENT MATCH", year: "2014 • 22 EPS", tag: "Bittersweet musical story about love, loss, and artistic healing.", tags: ["Romance", "Music", "Tearjerker"] },
+        { title: "Violet Evergarden", score: "96% INTENT MATCH", year: "2018 • 13 EPS", tag: "Visually stunning journey of understanding human emotions through letters.", tags: ["Drama", "Beautiful", "Emotional"] }
+    ]
+};
 
-    if (!box || !status || !detail) return;
+function filterKanjoMood(pillBtn, moodKey) {
+    if (!pillBtn) return;
+    document.querySelectorAll('.mood-pill').forEach(p => p.classList.remove('active'));
+    pillBtn.classList.add('active');
 
-    const val = (rawVal || '').trim();
-    box.className = 'qa-result-box';
+    const streamGrid = document.getElementById('kanjoStreamGrid');
+    if (!streamGrid || !animeMoodData[moodKey]) return;
 
-    if (val === '') {
-        box.classList.add('neutral');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-keyboard"></i>';
-        status.textContent = 'AWAITING DISPATCH INPUT...';
-        detail.textContent = 'Type an inspection fee amount above or select a scenario preset to test live dispatch rules.';
-        if (detailsRow) detailsRow.style.display = 'none';
-        return;
-    }
-
-    if (isNaN(val)) {
-        box.classList.add('error');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
-        status.textContent = 'TYPE VIOLATION DETECTED';
-        detail.textContent = `Rejected string input "${val}". UGhar validator enforces strict numeric inspection pricing.`;
-        if (detailsRow) detailsRow.style.display = 'none';
-        return;
-    }
-
-    const num = parseFloat(val);
-
-    if (num < 0) {
-        box.classList.add('error');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-ban"></i>';
-        status.textContent = 'BOUNDARY VIOLATION (NEGATIVE FEE)';
-        detail.textContent = `Rejected negative inspection fee (-₹${Math.abs(num)}). Booking payload dropped before dispatch queue.`;
-        if (detailsRow) detailsRow.style.display = 'none';
-        return;
-    }
-
-    if (num === 0) {
-        box.classList.add('warning');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
-        status.textContent = 'BOUNDARY ALERT: ZERO FEE CAP';
-        detail.textContent = `₹0 fee flagged! UGhar operational policy requires a non-zero fee for technician doorstep dispatch.`;
-        if (detailsRow) detailsRow.style.display = 'none';
-        return;
-    }
-
-    if (num > 50000) {
-        box.classList.add('warning');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-shield-cat"></i>';
-        status.textContent = 'BOUNDARY ALERT: EXCEEDS DISPATCH CAP';
-        detail.textContent = `Fee ₹${num.toLocaleString('en-IN')} exceeds standard single-service dispatch limit (₹50,000). High-value booking flagged for admin review.`;
-        if (detailsRow) detailsRow.style.display = 'none';
-        return;
-    }
-
-    // Passed valid check
-    box.classList.add('valid');
-    if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-    status.textContent = 'PASSED VALIDATION & DISPATCH READY';
-    detail.textContent = `Inspection fee ₹${num.toLocaleString('en-IN')} verified. Generated live 4-digit security OTP and allocated local technician.`;
-
-    if (detailsRow) detailsRow.style.display = 'flex';
-    if (otpCode) {
-        const randomOtp = Math.floor(1000 + Math.random() * 9000);
-        otpCode.textContent = randomOtp;
-    }
-    if (techLog) {
-        const sectors = ['Sakchi Sector', 'Bistupur Hub', 'Sonari Circle', 'Kadma Sector'];
-        const techId = Math.floor(300 + Math.random() * 200);
-        const sector = sectors[Math.floor(Math.random() * sectors.length)];
-        techLog.textContent = `Technician #${techId} Allocated • ${sector}`;
-    }
+    const items = animeMoodData[moodKey];
+    streamGrid.innerHTML = items.map(item => `
+        <div class="kanjo-card-item">
+            <div class="kanjo-card-top">
+                <span class="match-score-badge">${item.score}</span>
+                <span class="anime-year">${item.year}</span>
+            </div>
+            <h4 class="anime-card-title">${item.title}</h4>
+            <p class="anime-card-tagline">${item.tag}</p>
+            <div class="anime-tag-list">
+                ${item.tags.map(t => `<span>${t}</span>`).join('')}
+            </div>
+        </div>
+    `).join('');
 }
 
-// Creatorlytics Deal & Margin Calculator Validation Logic
-function setCreatorlyticsPreset(val) {
-    const input = document.getElementById('dealAmountInput');
-    if (input) {
-        input.value = val;
-        testCreatorlyticsDeal(val);
+// Creatorlytics CRM Stage Toggle Logic
+let dealStage1Won = true;
+let dealStage2Won = false;
+
+function toggleDealStage(dealId) {
+    if (dealId === 1) {
+        dealStage1Won = !dealStage1Won;
+        const badge = document.getElementById('dealStageBadge1');
+        if (badge) {
+            badge.className = dealStage1Won ? 'stage-pill stage-won' : 'stage-pill stage-pending';
+            badge.textContent = dealStage1Won ? 'CLOSED & PAID' : 'IN NEGOTIATION';
+        }
+    } else if (dealId === 2) {
+        dealStage2Won = !dealStage2Won;
+        const badge = document.getElementById('dealStageBadge2');
+        if (badge) {
+            badge.className = dealStage2Won ? 'stage-pill stage-won' : 'stage-pill stage-pending';
+            badge.textContent = dealStage2Won ? 'CLOSED & PAID' : 'IN NEGOTIATION';
+        }
     }
+    updateCrmTotals();
 }
 
-function simulateCreatorlyticsEdgeCase() {
-    setCreatorlyticsPreset('-10000');
-}
+function updateCrmTotals() {
+    let total = 0;
+    if (dealStage1Won) total += 75000;
+    if (dealStage2Won) total += 25000;
+    if (!dealStage1Won && !dealStage2Won) total = 0;
 
-function testCreatorlyticsDeal(rawVal) {
-    const box = document.getElementById('creatorlyticsResultBox');
-    const icon = document.getElementById('clResultIcon');
-    const status = document.getElementById('clResultStatus');
-    const detail = document.getElementById('clResultDetail');
-    const breakdownGrid = document.getElementById('clMarginBreakdown');
-    const platformCutEl = document.getElementById('clPlatformCut');
-    const netPayoutEl = document.getElementById('clNetPayout');
+    const totalEl = document.getElementById('crmTotalRevenue');
+    const cutEl = document.getElementById('crmPlatformCut');
+    const payoutEl = document.getElementById('crmNetPayout');
 
-    if (!box || !status || !detail) return;
+    const cut = Math.round(total * 0.10);
+    const payout = total - cut;
 
-    const val = (rawVal || '').trim();
-    box.className = 'qa-result-box';
-
-    if (val === '') {
-        box.classList.add('neutral');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-keyboard"></i>';
-        status.textContent = 'AWAITING DEAL AMOUNT...';
-        detail.textContent = 'Type a deal value above or click a scenario preset to test margin breakdown logic.';
-        if (breakdownGrid) breakdownGrid.style.display = 'none';
-        return;
-    }
-
-    if (isNaN(val)) {
-        box.classList.add('error');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
-        status.textContent = 'TYPE VIOLATION DETECTED';
-        detail.textContent = `Rejected string value "${val}". Creatorlytics CRM requires validated numeric currency integers.`;
-        if (breakdownGrid) breakdownGrid.style.display = 'none';
-        return;
-    }
-
-    const num = parseFloat(val);
-
-    if (num < 0) {
-        box.classList.add('error');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-ban"></i>';
-        status.textContent = 'BOUNDARY VIOLATION (NEGATIVE DEAL)';
-        detail.textContent = `Rejected negative deal value (-₹${Math.abs(num).toLocaleString('en-IN')}). Brand sponsorships cannot accept negative contract totals.`;
-        if (breakdownGrid) breakdownGrid.style.display = 'none';
-        return;
-    }
-
-    if (num === 0) {
-        box.classList.add('warning');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
-        status.textContent = 'ZERO VALUE DEAL ALERT';
-        detail.textContent = `₹0 deal amount flagged! Barter/pro-bono deals require zero-margin waiver approval.`;
-        if (breakdownGrid) breakdownGrid.style.display = 'none';
-        return;
-    }
-
-    if (num > 1000000) {
-        box.classList.add('warning');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-crown"></i>';
-        status.textContent = 'HIGH VALUE BRAND DEAL ALERT';
-        detail.textContent = `Deal ₹${num.toLocaleString('en-IN')} exceeds standard CRM tier (₹10 Lakhs). Flagged for enterprise tax compliance check.`;
-    } else {
-        box.classList.add('valid');
-        if (icon) icon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
-        status.textContent = 'SANITY PASSED & MARGIN CALCULATED';
-        detail.textContent = `Brand deal payload ₹${num.toLocaleString('en-IN')} verified. Platform commission breakdown calculated.`;
-    }
-
-    const platformCut = Math.round(num * 0.10);
-    const netPayout = num - platformCut;
-
-    if (breakdownGrid) breakdownGrid.style.display = 'grid';
-    if (platformCutEl) platformCutEl.textContent = `₹${platformCut.toLocaleString('en-IN')}`;
-    if (netPayoutEl) netPayoutEl.textContent = `₹${netPayout.toLocaleString('en-IN')}`;
+    if (totalEl) totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+    if (cutEl) cutEl.textContent = `₹${cut.toLocaleString('en-IN')}`;
+    if (payoutEl) payoutEl.textContent = `₹${payout.toLocaleString('en-IN')}`;
 }
 
 // Subtle 3D Card Tilt & Glare Effect (Max 6 degrees rotation)
