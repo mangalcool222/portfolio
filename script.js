@@ -66,7 +66,7 @@ function selectConsoleService(cardBtn, serviceName, fee) {
     document.querySelectorAll('.visual-service-card').forEach(c => c.classList.remove('active'));
     cardBtn.classList.add('active');
     currentConsoleServiceFee = fee;
-    
+
     const feeEl = document.getElementById('dispatchFeeText');
     if (feeEl) feeEl.textContent = `₹${fee}`;
 }
@@ -76,7 +76,7 @@ function selectSector(pillBtn, sectorName) {
     document.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
     pillBtn.classList.add('active');
     currentConsoleSector = sectorName;
-    
+
     const sectorEl = document.getElementById('selectedSectorName');
     if (sectorEl) sectorEl.textContent = sectorName;
 }
@@ -189,7 +189,7 @@ function updateCrmTotals() {
 // Subtle 3D Card Tilt & Glare Effect (Max 6 degrees rotation)
 function initSubtleCardTilt() {
     const cards = document.querySelectorAll('.card-minimal, .process-card, .playground-box, .research-box');
-    
+
     cards.forEach(card => {
         // Create glare element if not existing
         if (!card.querySelector('.card-glare')) {
@@ -202,16 +202,16 @@ function initSubtleCardTilt() {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             // Calculate tilt angle capped at 6 degrees
             const rotateX = ((centerY - y) / centerY) * 6;
             const rotateY = ((x - centerX) / centerX) * 6;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-            
+
             const glare = card.querySelector('.card-glare');
             if (glare) {
                 const glareX = (x / rect.width) * 100;
@@ -234,7 +234,7 @@ function initSubtleCardTilt() {
 // Staggered Scroll Reveal Observer
 function initScrollReveal() {
     const revealTargets = document.querySelectorAll('.card-minimal, .process-card, .research-box, .xp-item-minimal, .playground-box, .qa-philosophy-box');
-    
+
     revealTargets.forEach(el => {
         el.classList.add('fade-in-up');
         el.classList.add('visible');
@@ -290,7 +290,7 @@ function closeQrModal(e) {
 function renderQrCode() {
     const container = document.getElementById('qrCodeContainer');
     if (!container) return;
-    
+
     if (container.children.length > 0) return;
 
     const portfolioUrl = "https://mangalcool222.github.io/portfolio/?ref=qr_resume";
@@ -335,10 +335,10 @@ function downloadQrCode() {
         ctx.textAlign = "center";
         ctx.fillText("MANGAL SOREN", size / 2, 115);
 
-        // Header Subtitle: PRODUCT BUILDING • TESTING • OPERATIONS
+        // Header Subtitle: PRODUCT BUILDING • TESTING • OPERATIONS • MBA, DU
         ctx.fillStyle = "#ccff00";
         ctx.font = "bold 20px 'Space Grotesk', -apple-system, sans-serif";
-        ctx.fillText("PRODUCT BUILDING • TESTING • OPERATIONS • DU MBA", size / 2, 160);
+        ctx.fillText("PRODUCT BUILDING • TESTING • OPERATIONS • MBA, DU", size / 2, 160);
 
         // Draw QR Code Background Box (Volt)
         const qrSize = 540;
@@ -387,7 +387,7 @@ function downloadQrCode() {
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            
+
             showToast("✨ Executive QR Card Saved to Downloads!");
         }, 'image/png');
     };
@@ -434,7 +434,7 @@ END:VCARD`;
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
-    
+
     showToast("Contact vCard Downloaded! Tap to Save.");
 }
 
