@@ -122,7 +122,7 @@ FN:Mangal Soren
 N:Soren;Mangal;;;
 TITLE:Product Execution & Operations Lead
 ORG:UGhar & Creatorlytics
-EMAIL;TYPE=INTERNET,HOME:mangalsoren@zohomail.in
+EMAIL;TYPE=INTERNET,HOME:mangalsoren2025@dbe-du.org
 TEL;TYPE=CELL,VOICE:+919771783048
 URL:https://mangalcool222.github.io/portfolio/
 URL;TYPE=LinkedIn:https://www.linkedin.com/in/mangal-soren-1312ba31a/
