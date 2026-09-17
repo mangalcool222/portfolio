@@ -1073,3 +1073,36 @@ footer {
         margin-top: 15px;
     }
 }
+
+/* Certifications & Distinction Badges */
+.cert-badge {
+    font-size: 0.78rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--volt-accent);
+    background: rgba(204, 255, 0, 0.06);
+    border: 1px solid rgba(204, 255, 0, 0.3);
+    padding: 6px 14px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.cert-badge:hover {
+    background: rgba(204, 255, 0, 0.15);
+    border-color: var(--volt-accent);
+    transform: translateY(-2px);
+}
+
+.badge-volt-mini {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #000;
+    background: var(--volt-accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
