@@ -335,10 +335,10 @@ function downloadQrCode() {
         ctx.textAlign = "center";
         ctx.fillText("MANGAL SOREN", size / 2, 115);
 
-        // Header Subtitle: PRODUCT & OPERATIONS
+        // Header Subtitle: PRODUCT BUILDING • TESTING • OPERATIONS
         ctx.fillStyle = "#ccff00";
-        ctx.font = "bold 22px 'Space Grotesk', -apple-system, sans-serif";
-        ctx.fillText("PRODUCT EXECUTION & OPERATIONS • DU MBA", size / 2, 160);
+        ctx.font = "bold 20px 'Space Grotesk', -apple-system, sans-serif";
+        ctx.fillText("PRODUCT BUILDING • TESTING • OPERATIONS • DU MBA", size / 2, 160);
 
         // Draw QR Code Background Box (Volt)
         const qrSize = 540;
@@ -416,13 +416,13 @@ function downloadVCard() {
 VERSION:3.0
 FN:Mangal Soren
 N:Soren;Mangal;;;
-TITLE:Product Execution & Operations Lead
+TITLE:Product Building • Testing • Operations
 ORG:UGhar & Creatorlytics
 EMAIL;TYPE=INTERNET,HOME:mangalsoren2025@dbe-du.org
 TEL;TYPE=CELL,VOICE:+919771783048
 URL:https://mangalcool222.github.io/portfolio/
 URL;TYPE=LinkedIn:https://www.linkedin.com/in/mangal-soren-1312ba31a/
-NOTE:MBA Candidate Department of Business Economics University of Delhi. Building UGhar, Kanjo, Creatorlytics & CreatiGen.
+NOTE:MBA Candidate Department of Business Economics University of Delhi. Building & Testing UGhar, Kanjo, Creatorlytics & CreatiGen.
 END:VCARD`;
 
     const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
