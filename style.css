@@ -1878,11 +1878,6 @@ footer {
     }
 }
 
-
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 576px) {
     .process-flow-grid {
         grid-template-columns: 1fr;
