@@ -1113,3 +1113,347 @@ footer {
     border-radius: 4px;
     letter-spacing: 0.5px;
 }
+
+/* IST Clock Badge */
+.clock-badge {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 3D Card Tilt & Glare Base */
+.card-minimal, .process-card, .playground-box, .research-box, .xp-item-minimal {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 60%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-minimal:hover .card-glare, 
+.process-card:hover .card-glare,
+.playground-box:hover .card-glare {
+    opacity: 1;
+}
+
+/* How I Work Process Flow Grid */
+.process-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.process-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 24px 18px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.process-card:hover {
+    border-color: var(--volt-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.process-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--volt-accent);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.process-title {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.process-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Interactive QA Testing Playground Widget */
+.playground-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.playground-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.playground-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.playground-sub {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.playground-instructions {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.test-input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-white);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #000000;
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 4px 6px 4px 16px;
+    transition: var(--transition);
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--volt-accent);
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.15);
+}
+
+.currency-symbol {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--volt-accent);
+    margin-right: 8px;
+}
+
+.qa-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.btn-test {
+    padding: 10px 20px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.preset-chips {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.chip-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.preset-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.preset-chip:hover {
+    background: rgba(204, 255, 0, 0.1);
+    border-color: var(--volt-accent);
+    color: var(--volt-accent);
+}
+
+/* Live Validation Result Box */
+.qa-result-box {
+    border-radius: 8px;
+    padding: 18px 20px;
+    transition: var(--transition);
+    border: 1px solid var(--card-border);
+}
+
+.qa-result-box.neutral {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: var(--card-border);
+    color: var(--text-muted);
+}
+
+.qa-result-box.valid {
+    background: rgba(46, 204, 113, 0.08);
+    border-color: rgba(46, 204, 113, 0.4);
+    color: #2ecc71;
+}
+
+.qa-result-box.error {
+    background: rgba(231, 76, 60, 0.08);
+    border-color: rgba(231, 76, 60, 0.4);
+    color: #e74c3c;
+}
+
+.qa-result-box.warning {
+    background: rgba(241, 196, 15, 0.08);
+    border-color: rgba(241, 196, 15, 0.4);
+    color: #f1c40f;
+}
+
+.result-status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.result-detail-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: inherit;
+    opacity: 0.9;
+}
+
+/* QA Philosophy Box */
+.qa-philosophy-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.qa-phil-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.qa-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.qa-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.volt-icon {
+    color: var(--volt-accent);
+    font-size: 1.1rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.qa-check-list strong {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-white);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.qa-check-list p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Scroll Fade Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .process-flow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .playground-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .process-flow-grid {
+        grid-template-columns: 1fr;
+    }
+}

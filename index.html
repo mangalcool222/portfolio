@@ -42,7 +42,8 @@
     <section class="hero-section">
         <div class="container hero-full">
             <div class="hero-header-badge">
-                <span class="status-indicator"></span> PRODUCT EXECUTION & OPERATIONS
+                <span class="status-indicator"></span> BUILDING • TESTING • ITERATING
+                <span id="istClock" class="clock-badge"><i class="fa-solid fa-clock"></i> --:--:-- IST</span>
             </div>
             
             <h1 class="hero-title">MANGAL SOREN</h1>
@@ -105,7 +106,7 @@
                 <!-- UGhar -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <span class="badge-live-volt"><span class="dot-green"></span> BUILT & TESTED</span>
                         <a href="https://www.ughar.in/" target="_blank" class="card-domain-link">
                             ughar.in <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -122,19 +123,25 @@
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
-                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
+                        <span>INSPECT PRODUCT</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
                     <div class="case-study-drawer">
-                        <p class="cs-label">THE PROBLEM & FIELD FINDINGS</p>
+                        <p class="cs-label">01. PROBLEM & FIELD FINDINGS</p>
                         <p class="cs-text">Household repair in Tier-2/3 cities suffers from fragmented local technicians and hidden charges. Field research across Jamshedpur sectors (Sakchi, Bistupur, Sonari, Kadma) proved customer preference for a flat ₹99 doorstep inspection fee waived upon job execution.</p>
 
-                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <p class="cs-label">02. USER FLOW</p>
+                        <p class="cs-text">OTP Phone Auth → Service Selection (AC / Plumbing / Electrician) → 60s Checkout → 4-Digit OTP Technician Dispatch → Job Completion Sync.</p>
+
+                        <p class="cs-label">03. QA & EDGE CASES TESTED</p>
                         <ul class="cs-bullets">
-                            <li>Built 60-second mobile booking workflow with category dispatch</li>
-                            <li>Implemented 4-digit start/complete OTP security & technician QR verification</li>
-                            <li>Configured cloud infrastructure on Next.js, Supabase, Firebase, and Coolify</li>
+                            <li>Boundary Validation: Handled negative & extreme inspection fees (e.g. ₹0 or > ₹50,000 limits).</li>
+                            <li>OTP Expiry & Form Resubmission: Verified edge cases during network drops and unverified OTP resends.</li>
+                            <li>UI & Mobile QA: Tested mobile booking responsiveness across 10+ viewport sizes.</li>
                         </ul>
+
+                        <p class="cs-label">04. CURRENT STATUS</p>
+                        <p class="cs-text"><strong class="volt-text">● Platform Built & Full Flow Tested</strong> — Architecture fully operational; public marketing campaigns pending rollout.</p>
                     </div>
                 </div>
 
@@ -157,26 +164,31 @@
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
-                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
+                        <span>INSPECT PRODUCT</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
                     <div class="case-study-drawer">
-                        <p class="cs-label">THE INSIGHT</p>
+                        <p class="cs-label">01. THE INSIGHT</p>
                         <p class="cs-text">Traditional platforms index anime by rigid genres, forcing users to scroll 20+ minutes. Feeling-first discovery accelerates content selection and intent satisfaction.</p>
 
-                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <p class="cs-label">02. USER FLOW</p>
+                        <p class="cs-text">Mood Input (e.g. "Chill Evening", "High Energy", "Dark Thriller") → Structured Metadata Filter → Instant Recommendation Stream.</p>
+
+                        <p class="cs-label">03. QA & EDGE CASES TESTED</p>
                         <ul class="cs-bullets">
-                            <li>Researched viewer habits and designed mood-first recommendation flows</li>
-                            <li>Structured anime metadata around emotional themes and viewing contexts</li>
-                            <li>Iterated navigation UX based on testing to streamline media selection</li>
+                            <li>Empty Query & Invalid Mood Inputs: Fallbacks designed to prevent blank state screens.</li>
+                            <li>Mobile Touch Targets: Tested touch navigation on small mobile viewports for effortless scrolling.</li>
                         </ul>
+
+                        <p class="cs-label">04. CURRENT STATUS</p>
+                        <p class="cs-text"><strong class="volt-text">● Live & Publicly Accessible</strong> at kanjo.co.in.</p>
                     </div>
                 </div>
 
                 <!-- Creatorlytics -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
+                        <span class="badge-live-volt"><span class="dot-green"></span> BETA</span>
                         <a href="https://www.creatorlytics.cloud/" target="_blank" class="card-domain-link">
                             creatorlytics.cloud <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -193,26 +205,31 @@
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
-                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
+                        <span>INSPECT PRODUCT</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
                     <div class="case-study-drawer">
-                        <p class="cs-label">DISCOVERY & TRACTION</p>
-                        <p class="cs-text">Solo creators managing 5+ brand deals lose track of follow-ups in email threads. Executed 60+ cold outreach campaigns; pivoted to Reddit community validation (300+ impressions).</p>
+                        <p class="cs-label">01. DISCOVERY & TRACTION</p>
+                        <p class="cs-text">Solo creators managing 5+ brand deals lose track of follow-ups in email threads. Executed 60+ cold outreach campaigns; pivoted to Reddit community validation (300+ impressions & 15+ qualitative insights).</p>
 
-                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <p class="cs-label">02. USER FLOW</p>
+                        <p class="cs-text">Supabase Google Auth → Deal Pipeline Board → Revenue Analytics → Invoice Generator.</p>
+
+                        <p class="cs-label">03. QA & EDGE CASES TESTED</p>
                         <ul class="cs-bullets">
-                            <li>Executed positioning experiments across creator communities</li>
-                            <li>Set up GA4 user tracking & SEO discovery experiments</li>
-                            <li>Approved on SaaS Hub and launched live on Product Hunt</li>
+                            <li>OAuth Token Expiry & CORS Preflight: Fixed JWT token handling and Traefik proxy headers.</li>
+                            <li>Currency Conversion & Input Nulls: Verified zero-value deal states and currency toggle edge cases.</li>
                         </ul>
+
+                        <p class="cs-label">04. CURRENT STATUS</p>
+                        <p class="cs-text"><strong class="volt-text">● Live Beta & Product Hunt Listed</strong> at creatorlytics.cloud.</p>
                     </div>
                 </div>
 
                 <!-- CreatiGenHQ -->
                 <div class="card-minimal">
                     <div class="card-top-header">
-                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE BETA</span>
+                        <span class="badge-live-volt"><span class="dot-green"></span> LIVE</span>
                         <a href="https://creatigenhq.com/" target="_blank" class="card-domain-link">
                             creatigenhq.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -224,25 +241,156 @@
                     <div class="tag-row">
                         <span class="tag-volt">First Draft Engine</span>
                         <span class="tag-volt">Decision Co-Pilot</span>
-                        <span class="tag-volt">X & Reddit Analytics</span>
+                        <span class="tag-volt">PyTorch CPU</span>
                     </div>
 
                     <button type="button" class="accordion-trigger" onclick="toggleCaseStudy(this)">
-                        <span>EXPLORE CASE STUDY</span> <i class="fa-solid fa-plus"></i>
+                        <span>INSPECT PRODUCT</span> <i class="fa-solid fa-plus"></i>
                     </button>
 
                     <div class="case-study-drawer">
-                        <p class="cs-label">POSITIONING & VALIDATION</p>
+                        <p class="cs-label">01. POSITIONING & VALIDATION</p>
                         <p class="cs-text">Creators don't have an editing capability problem — they have a starting decision problem. Shifted positioning narrative from "AI Generator" to "First Draft Engine".</p>
 
-                        <p class="cs-label">EXECUTION HIGHLIGHTS</p>
+                        <p class="cs-label">02. USER FLOW</p>
+                        <p class="cs-text">Media Upload → AI Rough-Cut Timeline Proposal → Fine-Tune Timeline → Render & Export.</p>
+
+                        <p class="cs-label">03. QA & EDGE CASES TESTED</p>
                         <ul class="cs-bullets">
-                            <li>Designed structured validation framework to test rough-cut timeline workflows</li>
-                            <li>Collected feedback to bridge the gap between tools like Premiere/CapCut and creator needs</li>
+                            <li>PyTorch Build Optimization: Optimized CPU wheel installations to save 3GB+ container disk space.</li>
+                            <li>Large Media Upload Validation: Tested file size boundary limits and async processing timeouts.</li>
                         </ul>
+
+                        <p class="cs-label">04. CURRENT STATUS</p>
+                        <p class="cs-text"><strong class="volt-text">● Live & Publicly Operating</strong> at creatigenhq.com.</p>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section id="process" class="content-section view-section view-all">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="sub-label">PRODUCT METHODOLOGY</span>
+                <h2 class="title-display">HOW I <span class="volt-text">WORK</span></h2>
+            </div>
+
+            <div class="process-flow-grid">
+                <div class="process-card">
+                    <span class="process-num">01</span>
+                    <h3 class="process-title">PROBLEM DISCOVERY</h3>
+                    <p class="process-desc">Identify pain points through field research, community discussions (Reddit/X), and user interviews.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-num">02</span>
+                    <h3 class="process-title">RAPID PROTOTYPE</h3>
+                    <p class="process-desc">Build 0→1 MVP workflows using modern stacks (Next.js, FastAPI, Supabase, Firebase).</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-num">03</span>
+                    <h3 class="process-title">QA & EDGE CASE QA</h3>
+                    <p class="process-desc">Test input validations, boundary limits, auth token drops, and responsive viewports.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-num">04</span>
+                    <h3 class="process-title">FIND FRICTION</h3>
+                    <p class="process-desc">Analyze drop-offs, user confusion points, and unhandled system exceptions.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-num">05</span>
+                    <h3 class="process-title">ITERATE & SHIP</h3>
+                    <p class="process-desc">Refine UX, optimize cloud deployments, and deploy stable builds to production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive QA Testing Playground Section (The Killer Hook) -->
+    <section id="playground" class="content-section view-section view-all">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="sub-label">LIVE INTERACTIVE PROOF</span>
+                <h2 class="title-display">TESTING <span class="volt-text">PLAYGROUND</span></h2>
+            </div>
+
+            <div class="playground-grid">
+                <div class="playground-box">
+                    <div class="playground-header">
+                        <span class="badge-live-volt"><i class="fa-solid fa-bug-slash"></i> TRY BREAKING THIS INPUT</span>
+                        <span class="playground-sub">Operational Fee Validation Simulator</span>
+                    </div>
+
+                    <p class="playground-instructions">
+                        Test how the input validator handles valid values, boundary limits, negative inputs, non-numeric strings, and empty submissions.
+                    </p>
+
+                    <div class="test-input-group">
+                        <label for="qaTestInput" class="input-label">Enter Inspection Fee Amount (₹)</label>
+                        <div class="input-wrapper">
+                            <span class="currency-symbol">₹</span>
+                            <input type="text" id="qaTestInput" class="qa-input" placeholder="e.g. 99, -500, abc, 0, 75000" oninput="testInputValidation(this.value)" autocomplete="off">
+                            <button type="button" onclick="testInputValidation(document.getElementById('qaTestInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-play"></i> TEST</button>
+                        </div>
+                    </div>
+
+                    <div class="preset-chips">
+                        <span class="chip-label">Quick Scenarios:</span>
+                        <button type="button" class="preset-chip" onclick="setTestPreset('99')">₹99 (Valid)</button>
+                        <button type="button" class="preset-chip" onclick="setTestPreset('-500')">-500 (Negative)</button>
+                        <button type="button" class="preset-chip" onclick="setTestPreset('abc')">abc (String)</button>
+                        <button type="button" class="preset-chip" onclick="setTestPreset('0')">₹0 (Zero Fee)</button>
+                        <button type="button" class="preset-chip" onclick="setTestPreset('75000')">₹75,000 (Over Limit)</button>
+                    </div>
+
+                    <!-- Live Validation Feedback Box -->
+                    <div id="qaResultBox" class="qa-result-box neutral">
+                        <div class="result-status-header">
+                            <span id="qaResultIcon"><i class="fa-solid fa-keyboard"></i></span>
+                            <span id="qaResultStatus">AWAITING TEST INPUT...</span>
+                        </div>
+                        <p id="qaResultDetail" class="result-detail-text">Type an amount above or click a quick scenario button to test live edge-case validations.</p>
+                    </div>
+                </div>
+
+                <!-- QA Philosophy Panel -->
+                <div class="qa-philosophy-box">
+                    <span class="sub-label">WHAT I CHECK IN EVERY BUILD</span>
+                    <h3 class="qa-phil-title">QA & EDGE CASE CHECKLIST</h3>
+                    
+                    <ul class="qa-check-list">
+                        <li>
+                            <i class="fa-solid fa-check-double volt-icon"></i>
+                            <div>
+                                <strong>Input Validation & Sanitization</strong>
+                                <p>Strip unsafe strings, SQL injection vectors, and malformed characters.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-shield-halved volt-icon"></i>
+                            <div>
+                                <strong>Boundary Value Analysis (BVA)</strong>
+                                <p>Test min/max operational limits (e.g. ₹0 vs ₹50,000 inspection caps).</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-network-wired volt-icon"></i>
+                            <div>
+                                <strong>Auth & Proxy Exception Handling</strong>
+                                <p>Verify JWT expiry, CORS preflights, and 503 gateway crash recoveries.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-mobile-screen-button volt-icon"></i>
+                            <div>
+                                <strong>Viewport & Touch Target QA</strong>
+                                <p>Verify responsive mobile drawers, form submit accessibility, and 60s checkout UX.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
