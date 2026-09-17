@@ -316,42 +316,123 @@
                 <h2 class="title-display">TESTING <span class="volt-text">PLAYGROUND</span></h2>
             </div>
 
+            <!-- Sandbox 2-Tab Bar Switcher -->
+            <div class="sandbox-tab-bar">
+                <button type="button" class="sandbox-tab active" onclick="switchSandboxTab('ughar', this)">
+                    <i class="fa-solid fa-bolt"></i> ⚡ UGhar Dispatch & Fee Engine
+                </button>
+                <button type="button" class="sandbox-tab" onclick="switchSandboxTab('creatorlytics', this)">
+                    <i class="fa-solid fa-chart-line"></i> 📊 Creatorlytics Deal & Margin Calculator
+                </button>
+            </div>
+
             <div class="playground-grid">
-                <div class="playground-box">
+                
+                <!-- TAB 1: UGhar Dispatch & Fee Engine Panel -->
+                <div id="ugharSandboxPanel" class="playground-box sandbox-panel active">
                     <div class="playground-header">
-                        <span class="badge-live-volt"><i class="fa-solid fa-bug-slash"></i> TRY BREAKING THIS INPUT</span>
-                        <span class="playground-sub">Operational Fee Validation Simulator</span>
+                        <span class="badge-live-volt"><i class="fa-solid fa-house"></i> UGHAR HYPERLOCAL ENGINE</span>
+                        <span class="playground-sub">Service Dispatch & Boundary QA</span>
                     </div>
 
                     <p class="playground-instructions">
-                        Test how the input validator handles valid values, boundary limits, negative inputs, non-numeric strings, and empty submissions.
+                        Simulate technician dispatch, test inspection fee boundary rules (₹99 model), and generate live 4-digit security OTPs.
                     </p>
 
+                    <!-- Service Picker Chips -->
+                    <div class="service-selector-group">
+                        <label class="input-label">Select Hyperlocal Service</label>
+                        <div class="service-chips-row">
+                            <button type="button" class="service-chip active" onclick="selectUGharService(this, '99')">AC Repair (₹99)</button>
+                            <button type="button" class="service-chip" onclick="selectUGharService(this, '99')">Plumbing (₹99)</button>
+                            <button type="button" class="service-chip" onclick="selectUGharService(this, '149')">Electrical Checkup (₹149)</button>
+                        </div>
+                    </div>
+
                     <div class="test-input-group">
-                        <label for="qaTestInput" class="input-label">Enter Inspection Fee Amount (₹)</label>
+                        <label for="ugharFeeInput" class="input-label">Enter Inspection Fee Amount (₹)</label>
                         <div class="input-wrapper">
                             <span class="currency-symbol">₹</span>
-                            <input type="text" id="qaTestInput" class="qa-input" placeholder="e.g. 99, -500, abc, 0, 75000" oninput="testInputValidation(this.value)" autocomplete="off">
-                            <button type="button" onclick="testInputValidation(document.getElementById('qaTestInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-play"></i> TEST</button>
+                            <input type="text" id="ugharFeeInput" class="qa-input" value="99" placeholder="e.g. 99, -50, 0, 75000" oninput="testUGharDispatch(this.value)" autocomplete="off">
+                            <button type="button" onclick="testUGharDispatch(document.getElementById('ugharFeeInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-paper-plane"></i> DISPATCH</button>
                         </div>
                     </div>
 
                     <div class="preset-chips">
                         <span class="chip-label">Quick Scenarios:</span>
-                        <button type="button" class="preset-chip" onclick="setTestPreset('99')">₹99 (Valid)</button>
-                        <button type="button" class="preset-chip" onclick="setTestPreset('-500')">-500 (Negative)</button>
-                        <button type="button" class="preset-chip" onclick="setTestPreset('abc')">abc (String)</button>
-                        <button type="button" class="preset-chip" onclick="setTestPreset('0')">₹0 (Zero Fee)</button>
-                        <button type="button" class="preset-chip" onclick="setTestPreset('75000')">₹75,000 (Over Limit)</button>
+                        <button type="button" class="preset-chip" onclick="setUGharPreset('99')">₹99 (Valid)</button>
+                        <button type="button" class="preset-chip" onclick="setUGharPreset('-50')">-50 (Negative)</button>
+                        <button type="button" class="preset-chip" onclick="setUGharPreset('abc')">abc (String)</button>
+                        <button type="button" class="preset-chip" onclick="setUGharPreset('0')">₹0 (Zero Fee)</button>
+                        <button type="button" class="preset-chip" onclick="setUGharPreset('75000')">₹75,000 (Over Limit)</button>
+                        <button type="button" class="preset-chip chip-error-toggle" onclick="simulateUGharEdgeCase()"><i class="fa-solid fa-bug"></i> Edge Case Error</button>
                     </div>
 
-                    <!-- Live Validation Feedback Box -->
-                    <div id="qaResultBox" class="qa-result-box neutral">
+                    <!-- Live Validation Feedback & Dispatch Log Box -->
+                    <div id="ugharResultBox" class="qa-result-box valid">
                         <div class="result-status-header">
-                            <span id="qaResultIcon"><i class="fa-solid fa-keyboard"></i></span>
-                            <span id="qaResultStatus">AWAITING TEST INPUT...</span>
+                            <span id="ugharResultIcon"><i class="fa-solid fa-circle-check"></i></span>
+                            <span id="ugharResultStatus">PASSED VALIDATION & DISPATCH READY</span>
                         </div>
-                        <p id="qaResultDetail" class="result-detail-text">Type an amount above or click a quick scenario button to test live edge-case validations.</p>
+                        <p id="ugharResultDetail" class="result-detail-text">Inspection fee ₹99 passes boundary checks. Generating dispatch payload...</p>
+                        
+                        <!-- Simulated Dispatch OTP & Log -->
+                        <div id="ugharDispatchDetails" class="dispatch-details-row">
+                            <div class="otp-badge"><i class="fa-solid fa-key"></i> 4-DIGIT OTP: <strong id="ugharOtpCode">4829</strong></div>
+                            <div class="tech-log-text"><i class="fa-solid fa-user-gear"></i> <span id="ugharTechLog">Technician #402 Assigned • Sakchi Sector</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: Creatorlytics Deal & Margin Calculator Panel -->
+                <div id="creatorlyticsSandboxPanel" class="playground-box sandbox-panel" style="display: none;">
+                    <div class="playground-header">
+                        <span class="badge-live-volt"><i class="fa-solid fa-chart-line"></i> CREATORLYTICS CRM ENGINE</span>
+                        <span class="playground-sub">Sponsorship Deal & Margin Calculator</span>
+                    </div>
+
+                    <p class="playground-instructions">
+                        Calculate platform commission margins, creator net payout, and test brand deal transaction boundary limits.
+                    </p>
+
+                    <div class="test-input-group">
+                        <label for="dealAmountInput" class="input-label">Enter Brand Deal Amount (₹)</label>
+                        <div class="input-wrapper">
+                            <span class="currency-symbol">₹</span>
+                            <input type="text" id="dealAmountInput" class="qa-input" value="50000" placeholder="e.g. 50000, -10000, 0, 1500000" oninput="testCreatorlyticsDeal(this.value)" autocomplete="off">
+                            <button type="button" onclick="testCreatorlyticsDeal(document.getElementById('dealAmountInput').value)" class="btn-primary-volt btn-test"><i class="fa-solid fa-calculator"></i> CALCULATE</button>
+                        </div>
+                    </div>
+
+                    <div class="preset-chips">
+                        <span class="chip-label">Quick Scenarios:</span>
+                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('50000')">₹50,000 (Standard)</button>
+                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('-10000')">-10k (Negative)</button>
+                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('abc')">abc (String)</button>
+                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('0')">₹0 (Zero Deal)</button>
+                        <button type="button" class="preset-chip" onclick="setCreatorlyticsPreset('1500000')">₹15 Lakhs (High Deal)</button>
+                        <button type="button" class="preset-chip chip-error-toggle" onclick="simulateCreatorlyticsEdgeCase()"><i class="fa-solid fa-bug"></i> Edge Case Error</button>
+                    </div>
+
+                    <!-- Live Deal Calculation Result Box -->
+                    <div id="creatorlyticsResultBox" class="qa-result-box valid">
+                        <div class="result-status-header">
+                            <span id="clResultIcon"><i class="fa-solid fa-circle-check"></i></span>
+                            <span id="clResultStatus">SANITY PASSED & MARGIN CALCULATED</span>
+                        </div>
+                        <p id="clResultDetail" class="result-detail-text">Brand deal payload ₹50,000 verified. Platform commission breakdown calculated.</p>
+
+                        <!-- Margin Breakdown Grid -->
+                        <div id="clMarginBreakdown" class="margin-breakdown-grid">
+                            <div class="margin-card">
+                                <span class="margin-label">10% Platform Cut</span>
+                                <strong id="clPlatformCut" class="margin-value">₹5,000</strong>
+                            </div>
+                            <div class="margin-card">
+                                <span class="margin-label">Net Creator Payout</span>
+                                <strong id="clNetPayout" class="margin-value volt-text">₹45,000</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -365,21 +446,21 @@
                             <i class="fa-solid fa-check-double volt-icon"></i>
                             <div>
                                 <strong>Input Validation & Sanitization</strong>
-                                <p>Strip unsafe strings, SQL injection vectors, and malformed characters.</p>
+                                <p>Strip unsafe strings, SQL injection vectors, and malformed currency inputs.</p>
                             </div>
                         </li>
                         <li>
                             <i class="fa-solid fa-shield-halved volt-icon"></i>
                             <div>
                                 <strong>Boundary Value Analysis (BVA)</strong>
-                                <p>Test min/max operational limits (e.g. ₹0 vs ₹50,000 inspection caps).</p>
+                                <p>Test min/max operational limits (e.g. ₹0 vs ₹50,000 inspection & deal caps).</p>
                             </div>
                         </li>
                         <li>
-                            <i class="fa-solid fa-network-wired volt-icon"></i>
+                            <i class="fa-solid fa-key volt-icon"></i>
                             <div>
-                                <strong>Auth & Proxy Exception Handling</strong>
-                                <p>Verify JWT expiry, CORS preflights, and 503 gateway crash recoveries.</p>
+                                <strong>Security & OTP Dispatch QA</strong>
+                                <p>Verify 4-digit OTP generation, dispatch state sync, and partner QR validation.</p>
                             </div>
                         </li>
                         <li>
