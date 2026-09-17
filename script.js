@@ -312,20 +312,100 @@ function renderQrCode() {
     `;
 }
 
-// Download QR Image for Resume
+// Download High-Resolution Branded Executive QR Card PNG for Resume
 function downloadQrCode() {
-    const portfolioUrl = "https://mangalcool222.github.io/portfolio/?ref=qr_resume";
-    const qrDownloadUrl = `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(portfolioUrl)}&color=050505&bgcolor=ccff00&margin=2`;
+    showToast("Generating Executive QR Card PNG...");
 
-    const a = document.createElement('a');
-    a.href = qrDownloadUrl;
-    a.download = 'Mangal_Soren_Portfolio_QR.png';
-    a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    
-    showToast("QR Code Download Started!");
+    const portfolioUrl = "https://mangalcool222.github.io/portfolio/?ref=qr_resume";
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encodeURIComponent(portfolioUrl)}&color=050505&bgcolor=ccff00&margin=1`;
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const size = 1000;
+        canvas.width = size;
+        canvas.height = size;
+
+        // Dark Luxury Card Background (#090a0b)
+        ctx.fillStyle = "#090a0b";
+        ctx.fillRect(0, 0, size, size);
+
+        // Outer Neon Volt Accent Border (#ccff00)
+        ctx.strokeStyle = "#ccff00";
+        ctx.lineWidth = 12;
+        ctx.strokeRect(35, 35, size - 70, size - 70);
+
+        // Header Title: MANGAL SOREN
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 48px 'Space Grotesk', -apple-system, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("MANGAL SOREN", size / 2, 115);
+
+        // Header Subtitle: PRODUCT & OPERATIONS
+        ctx.fillStyle = "#ccff00";
+        ctx.font = "bold 22px 'Space Grotesk', -apple-system, sans-serif";
+        ctx.fillText("PRODUCT EXECUTION & OPERATIONS • DU MBA", size / 2, 160);
+
+        // Draw QR Code Background Box (Volt)
+        const qrSize = 540;
+        const qrX = (size - qrSize) / 2;
+        const qrY = 210;
+
+        ctx.fillStyle = "#ccff00";
+        ctx.fillRect(qrX - 16, qrY - 16, qrSize + 32, qrSize + 32);
+
+        // Draw High-Res QR Code Image
+        ctx.drawImage(img, qrX, qrY, qrSize, qrSize);
+
+        // Center MS. Logo Badge Box
+        const logoWidth = 110;
+        const logoHeight = 60;
+        const logoX = (size - logoWidth) / 2;
+        const logoY = qrY + (qrSize - logoHeight) / 2;
+
+        ctx.fillStyle = "#050505";
+        ctx.fillRect(logoX, logoY, logoWidth, logoHeight);
+
+        ctx.strokeStyle = "#ccff00";
+        ctx.lineWidth = 5;
+        ctx.strokeRect(logoX, logoY, logoWidth, logoHeight);
+
+        ctx.fillStyle = "#ccff00";
+        ctx.font = "bold 32px 'Space Grotesk', sans-serif";
+        ctx.fillText("MS.", size / 2, logoY + 42);
+
+        // Footer Instructions
+        ctx.fillStyle = "#8e929a";
+        ctx.font = "600 22px 'Space Grotesk', -apple-system, sans-serif";
+        ctx.fillText("SCAN WITH ANY PHONE CAMERA TO CONNECT", size / 2, 850);
+
+        ctx.fillStyle = "#ccff00";
+        ctx.font = "bold 26px 'Space Grotesk', -apple-system, sans-serif";
+        ctx.fillText("https://mangalcool222.github.io/portfolio/", size / 2, 895);
+
+        // Convert canvas to blob & trigger direct download
+        canvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.download = 'Mangal_Soren_Executive_QR.png';
+            a.href = url;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast("✨ Executive QR Card Saved to Downloads!");
+        }, 'image/png');
+    };
+
+    img.onerror = () => {
+        // Fallback direct link if cross-origin image fails
+        window.open(qrApiUrl, '_blank');
+    };
+
+    img.src = qrApiUrl;
 }
 
 // Copy Portfolio URL
