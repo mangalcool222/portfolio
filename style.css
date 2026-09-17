@@ -238,7 +238,8 @@ ul {
     z-index: 990;
     background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(12px);
-    border-y: 1px solid var(--card-border);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
     padding: 12px 0;
     margin-bottom: 30px;
 }
