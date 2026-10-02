@@ -254,7 +254,10 @@ function filterView(viewCategory, btn) {
         sections.forEach(sec => sec.classList.remove('hidden-view'));
     } else {
         sections.forEach(sec => {
-            if (sec.classList.contains(`view-${viewCategory}`)) {
+            const isMatch = sec.classList.contains('view-' + viewCategory) ||
+                            (viewCategory === 'work' && (sec.classList.contains('view-apps') || sec.classList.contains('view-work'))) ||
+                            (viewCategory === 'about' && (sec.classList.contains('view-skills') || sec.classList.contains('view-about')));
+            if (isMatch) {
                 sec.classList.remove('hidden-view');
             } else {
                 sec.classList.add('hidden-view');

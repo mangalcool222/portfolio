@@ -28,11 +28,10 @@
         <div class="container nav-inner">
             <a href="#" class="brand-logo">MANGAL SOREN<span class="dot-accent">.</span></a>
             <div class="nav-links">
-                <a href="#work" onclick="filterView('apps')">WORK</a>
+                <a href="#work" onclick="filterView('work')">WORK</a>
                 <a href="#experience" onclick="filterView('experience')">EXPERIENCE</a>
                 <a href="#research" onclick="filterView('research')">RESEARCH</a>
-                <a href="#skills" onclick="filterView('all')">SKILLS</a>
-                <a href="#" onclick="openQrModal(event)" class="nav-qr-link"><i class="fa-solid fa-qrcode"></i> QR</a>
+                <a href="#skills" onclick="filterView('about')">ABOUT</a>
                 <a href="#contact" class="nav-cta">GET IN TOUCH</a>
             </div>
         </div>
@@ -49,14 +48,13 @@
             <h1 class="hero-title">MANGAL SOREN</h1>
             
             <p class="hero-tagline">
-                MBA (Business Economics) candidate with hands-on experience in product execution, GTM, and platform operations.
-                Currently scaling execution for <a href="https://www.ughar.in/" target="_blank" class="highlight-link">UGhar</a>, <a href="https://kanjo.co.in/" target="_blank" class="highlight-link">Kanjo</a>, <a href="https://www.creatorlytics.cloud/" target="_blank" class="highlight-link">Creatorlytics</a>, and <a href="https://creatigenhq.com/" target="_blank" class="highlight-link">CreatiGen</a>.
+                MBA (Business Economics) candidate with hands-on experience building, testing, and working on early-stage products across product, GTM, and operations.
             </p>
 
             <div class="hero-actions">
-                <a href="#work" class="btn-primary-volt">EXPLORE LIVE APPS <i class="fa-solid fa-arrow-down-right"></i></a>
-                <a href="#" onclick="openQrModal(event)" class="btn-secondary-dark btn-qr-hero"><i class="fa-solid fa-qrcode"></i> SCAN QR</a>
-                <a href="#contact" class="btn-secondary-dark">LET’S CONNECT <i class="fa-solid fa-paper-plane"></i></a>
+                <a href="#work" class="btn-primary-volt">VIEW PROJECTS <i class="fa-solid fa-arrow-down-right"></i></a>
+                <a href="https://www.linkedin.com/in/mangal-soren-1312ba31a/" target="_blank" class="btn-secondary-dark"><i class="fa-brands fa-linkedin"></i> LINKEDIN</a>
+                <a href="#contact" class="btn-secondary-dark">GET IN TOUCH <i class="fa-solid fa-paper-plane"></i></a>
             </div>
         </div>
     </section>
@@ -86,19 +84,19 @@
     <!-- Sticky Filter Bar -->
     <div class="sticky-filter-bar">
         <div class="container filter-container">
-            <button class="filter-tab active" onclick="filterView('all', this)">ALL OVERVIEW</button>
-            <button class="filter-tab" onclick="filterView('apps', this)">LIVE APPS (4)</button>
+            <button class="filter-tab active" onclick="filterView('work', this)">WORK</button>
             <button class="filter-tab" onclick="filterView('experience', this)">EXPERIENCE</button>
-            <button class="filter-tab" onclick="filterView('research', this)">RESEARCH & STUDIES</button>
+            <button class="filter-tab" onclick="filterView('research', this)">RESEARCH</button>
+            <button class="filter-tab" onclick="filterView('about', this)">ABOUT</button>
         </div>
     </div>
 
     <!-- Live Apps Section -->
-    <section id="work" class="content-section view-section view-apps view-all">
+    <section id="work" class="content-section view-section view-work view-apps view-all">
         <div class="container">
             <div class="section-title-wrap">
-                <span class="sub-label">01 / SHIPPED PRODUCTS</span>
-                <h2 class="title-display">LIVE <span class="volt-text">PLATFORMS</span></h2>
+                <span class="sub-label">01 / PRODUCTS & PROJECTS</span>
+                <h2 class="title-display">BUILT & <span class="volt-text">TESTED</span></h2>
             </div>
 
             <div class="compact-grid">
@@ -271,7 +269,7 @@
     </section>
 
     <!-- How I Work Section -->
-    <section id="process" class="content-section view-section view-all">
+    <section id="process" class="content-section view-section view-about view-skills view-all">
         <div class="container">
             <div class="section-title-wrap">
                 <span class="sub-label">PRODUCT METHODOLOGY</span>
@@ -309,7 +307,7 @@
     </section>
 
     <!-- Visual Interactive Product Console Section -->
-    <section id="playground" class="content-section view-section view-all">
+    <section id="playground" class="content-section view-section view-about view-skills view-all">
         <div class="container">
             <div class="section-title-wrap">
                 <span class="sub-label">LIVE PRODUCT EXPERIENCES</span>
@@ -725,7 +723,7 @@
     </section>
 
     <!-- Arsenal & Foundation Section -->
-    <section id="skills" class="content-section view-section view-all">
+    <section id="skills" class="content-section view-section view-about view-skills view-all">
         <div class="container">
             <div class="split-columns">
                 
@@ -825,7 +823,7 @@
 
     <!-- Mobile App Bottom Navigation Dock (iOS / Android App Style) -->
     <nav class="mobile-bottom-dock">
-        <a href="#work" onclick="filterView('apps'); setDockActive(this)" class="dock-item active">
+        <a href="#work" onclick="filterView('work'); setDockActive(this)" class="dock-item active">
             <i class="fa-solid fa-layer-group"></i>
             <span>WORK</span>
         </a>
@@ -833,13 +831,13 @@
             <i class="fa-solid fa-briefcase"></i>
             <span>XP</span>
         </a>
-        <a href="#skills" onclick="filterView('all'); setDockActive(this)" class="dock-item">
-            <i class="fa-solid fa-code"></i>
-            <span>SKILLS</span>
+        <a href="#research" onclick="filterView('research'); setDockActive(this)" class="dock-item">
+            <i class="fa-solid fa-book-open"></i>
+            <span>RESEARCH</span>
         </a>
-        <a href="#" onclick="openQrModal(event)" class="dock-item dock-item-qr">
-            <i class="fa-solid fa-qrcode"></i>
-            <span>QR</span>
+        <a href="#skills" onclick="filterView('about'); setDockActive(this)" class="dock-item">
+            <i class="fa-solid fa-user"></i>
+            <span>ABOUT</span>
         </a>
         <a href="#contact" onclick="setDockActive(this)" class="dock-item">
             <i class="fa-solid fa-paper-plane"></i>

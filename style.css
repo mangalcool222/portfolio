@@ -134,9 +134,9 @@ ul {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--volt-accent);
-    background: rgba(204, 255, 0, 0.05);
-    border: 1px solid rgba(204, 255, 0, 0.2);
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 6px 16px;
     border-radius: 30px;
     margin-bottom: 18px;
@@ -336,9 +336,9 @@ ul {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--volt-accent);
-    background: rgba(204, 255, 0, 0.08);
-    border: 1px solid rgba(204, 255, 0, 0.25);
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 3px 10px;
     border-radius: 4px;
     display: inline-flex;
