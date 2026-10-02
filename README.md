@@ -1,49 +1,48 @@
-# 🚀 Mangal Soren — GTM Engineer & AI Product Builder
+# Hey! 👋 I’m Mangal from Jamshedpur.
 
-> Product Manager & Automation Specialist building **AI-native GTM engines**, **autonomous n8n workflows**, and **0-to-1 SaaS products**.
+I’m currently exploring product management, product building, automation, and tech.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=for-the-badge&logo=github)](https://github.com/mangalcool222)
-[![n8n Engine](https://img.shields.io/badge/n8n-GTM_Automation-FF6D5A?style=for-the-badge&logo=n8n)](https://n8n.trackkaroai.com)
-[![Gemini AI](https://img.shields.io/badge/Gemini_AI-2.5_Flash-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev)
+I enjoy taking a problem or a rough idea, understanding it from a user’s perspective, and then building a simple working version to see what works and what doesn’t.
 
----
-
-## 🌟 Featured Open-Source Projects & Repositories
-
-### 1. ⚡ [GTM & AI Agentic Workflow Engine](https://github.com/mangalcool222/gtm-n8n-agentic-engine)
-- **Tech Stack:** n8n, Gemini 2.5 Flash, Python, Trello REST API
-- **Overview:** An autonomous 24/7 GTM & Career Auto-Pilot engine that ingests multi-source remote job APIs, runs a strict 3-Rule AI Guardrail filter (Experience, Geo & Domain eligibility), and generates customized elevator pitches synced directly to a Trello Kanban board.
-- 🔗 **Repo Link:** [`mangalcool222/gtm-n8n-agentic-engine`](https://github.com/mangalcool222/gtm-n8n-agentic-engine)
+Most of the things I build are learning projects — sometimes they work, sometimes they don’t. The fun part for me is figuring out why, testing different approaches, and improving them along the way.
 
 ---
 
-### 2. 🤖 [Claude Code CLI (Open-Source AI Pair Programmer)](https://github.com/mangalcool222/claude-code-cli)
-- **Tech Stack:** Python 3.9+, Gemini 2.5 Flash, Ollama (Local LLM), Rich Terminal CLI
-- **Overview:** A zero-cost, open-source CLI coding agent alternative to Anthropic's Claude Code. Features local file context inspection, automated git diff analysis, code patch generation, and local offline Ollama model routing.
-- 🔗 **Repo Link:** [`mangalcool222/claude-code-cli`](https://github.com/mangalcool222/claude-code-cli)
+### 🛠️ What I’m Learning & Using
+
+- **Product & Prototyping:** Problem exploration, user flows, simple MVPs, testing and iteration.
+- **Automation:** n8n workflows, Gemini & OpenAI APIs, and small scripts for repetitive tasks.
+- **Development:** Python, REST APIs, Next.js, TailwindCSS, Supabase and Firebase.
+- **Other:** Git, GitHub, basic analytics, research and documentation.
 
 ---
 
-### 3. 🧠 Perspective.ai (AI Decision Brief & Room Architecture)
-- **Tech Stack:** Next.js, Framer Motion, TailwindCSS, Gemini/Anthropic APIs
-- **Overview:** An AI-native platform engineered for decision-makers and founders to generate shareable decision briefs, room architectures, and automated pushback context-gates.
+### 🚀 Things I’ve Built
+
+- **UGhar** — A hyperlocal home-services platform built around local service requests, booking and technician workflows.
+- **Kanjo** — An anime discovery platform exploring mood and feeling-based content discovery.
+- **Creatorlytics** — A small creator-focused tool for managing sponsorships, deals and revenue.
+- **CreatiGen** — An experiment around helping creators turn source videos into short-form content.
+- **Perspective.ai** — A simple experiment around turning complex choices into structured decision briefs.
+- **Automation Experiments** — Small n8n/Python workflows built to solve repetitive tasks and explore what can be automated.
+- ⚡ **[GTM & AI Agentic Engine](https://github.com/mangalcool222/gtm-n8n-agentic-engine)** — An autonomous n8n & Gemini AI scraping and evaluation pipeline.
+- 🤖 **[Claude Code CLI](https://github.com/mangalcool222/claude-code-cli)** — An open-source CLI coding agent supporting Gemini, Claude, and local Ollama models.
 
 ---
 
-## 🛠️ Technical Stack & Core Competencies
+### 📚 Background
 
-- **Product & Growth:** Product Strategy, PLG Funnel Optimization, PRD Authoring, Competitor Teardowns, User Onboarding Loops.
-- **AI & Automation:** n8n Workflow Orchestration, Gemini/OpenAI API Function Calling, Prompt Engineering & Guardrails, LLM Evals.
-- **Development & Scripting:** Python 3.9+, REST API Webhooks, JSON Schema Design, Next.js, Git & GitHub CI/CD.
-- **Productivity & Kanban:** Trello REST API, Notion, Linear, Figma.
-
----
-
-## 📬 Connect & Collaborate
-
-- 💼 **GitHub:** [@mangalcool222](https://github.com/mangalcool222)
-- 📍 **Location:** Jamshedpur, Jharkhand, India (Open to 100% Worldwide Remote)
+- **MBA (Business Economics)** — University of Delhi
+- **BBA** — BIT Mesra
+- Previous internship experience at **Tata Steel** and in marketing/analytics roles.
 
 ---
-*Built with 💡 by Mangal Soren.*
+
+### 📬 Connect
+
+- **Portfolio:** [mangalcool222.github.io/portfolio](https://mangalcool222.github.io/portfolio/)
+- **LinkedIn:** [linkedin.com/in/mangal-soren-1312ba31](https://www.linkedin.com/in/mangal-soren-1312ba31/)
+- **GitHub:** [@mangalcool222](https://github.com/mangalcool222)
+- **Location:** Jamshedpur, India
+
+*I’m mostly here to learn, build, break things, and understand how products actually work.*
