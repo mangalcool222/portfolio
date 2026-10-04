@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBZ Ultimate Anime ScreenSaver for macOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DZdFif5v.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BukUhNcY.css">
+</head>
+<body>
+
+  <!-- Fullscreen ScreenSaver Canvas -->
+  <canvas id="saver-canvas"></canvas>
+
+  <!-- Top Left Control Panel Bar -->
+  <div class="control-panel">
+    <button class="btn btn-primary" id="btn-clash">
+      ⚡ Clash! (Space)
+    </button>
+    <button class="btn" id="btn-transform">
+      🔥 Transform (C)
+    </button>
+    <button class="btn" id="btn-arena">
+      🌌 Arena (A)
+    </button>
+    <button class="btn" id="btn-sound">
+      🔊 Sound (M)
+    </button>
+    <button class="btn btn-icon" id="btn-fullscreen" title="Fullscreen (F)">
+      ⛶
+    </button>
+    <button class="btn btn-icon" id="btn-guide" title="macOS Saver Setup Guide">
+      ❓ Guide
+    </button>
+  </div>
+
+  <!-- macOS Screensaver Setup Modal -->
+  <div class="modal-overlay" id="guide-modal">
+    <div class="modal-card">
+      <h2>🍎 How to set as macOS Screen Saver</h2>
+      <p>Follow these 3 easy steps to turn this dynamic Dragon Ball Z fight into your official MacBook screensaver:</p>
+
+      <ol class="modal-steps">
+        <li>
+          <strong>Option A: Native Web Saver Plugin (Recommended)</strong><br>
+          Install <strong>WebViewScreenSaver</strong> or <strong>Aerial Web Saver</strong> for macOS, then add this URL:
+          <span class="modal-code" id="app-url-code">http://localhost:5173</span>
+        </li>
+        <li>
+          <strong>Option B: Instant Fullscreen Browser Saver</strong><br>
+          Open this app in Safari or Chrome, press <span class="modal-code">F</span> to go fullscreen. When you step away from your Mac, mouse hides & screensaver mode auto-activates!
+        </li>
+        <li>
+          <strong>Keyboard Shortcuts Cheat Sheet</strong><br>
+          • <strong>[SPACE]</strong> : Super Beam Clash Boom!<br>
+          • <strong>[C]</strong> : Cycle Character Transformations (SSJ / Blue / UI / Golden)<br>
+          • <strong>[A]</strong> : Switch Battle Arenas (Namek / TOP / Wasteland / Chamber)<br>
+          • <strong>[F]</strong> : Toggle Fullscreen<br>
+          • <strong>[1, 2, 3]</strong> : Switch Character Matchups (Goku vs Vegeta / Goku vs Frieza / Vegeta vs Broly)<br>
+          • <strong>[M]</strong> : Mute / Unmute Energy Audio SFX
+        </li>
+      </ol>
+
+      <div style="text-align: right;">
+        <button class="btn btn-primary" id="btn-close-modal">Got it, Let's Fight! 💥</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
