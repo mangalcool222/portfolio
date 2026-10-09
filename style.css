@@ -2078,3 +2078,59 @@ footer#contact .footer-bottom {
 .ticker-val {
     color: #1c1917 !important;
 }
+
+/* Kanjo Discovery Engine Light Mode Fixes */
+.kanjo-card-item {
+    background: #ffffff !important;
+    border: 1px solid #e6e1d8 !important;
+    border-radius: 10px;
+    padding: 18px;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.kanjo-card-item:hover {
+    border-color: #da7756 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.match-score-badge {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #c45b38 !important;
+    background: rgba(218, 119, 86, 0.1) !important;
+    border: 1px solid rgba(218, 119, 86, 0.2) !important;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.anime-year {
+    font-size: 0.75rem;
+    color: #78716c !important;
+    font-weight: 600;
+}
+
+.anime-card-title {
+    font-size: 1.05rem;
+    color: #1c1917 !important;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.anime-card-tagline {
+    font-size: 0.85rem;
+    color: #44403c !important;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.anime-tag-list span {
+    font-size: 0.7rem;
+    background: #f3efe6 !important;
+    color: #44403c !important;
+    border: 1px solid #e6e1d8 !important;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
