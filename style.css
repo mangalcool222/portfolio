@@ -1921,3 +1921,160 @@ footer#contact .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     color: #78716c !important;
 }
+
+/* Console Sandbox 3-Tab Switcher Bar */
+.sandbox-tab-bar {
+    display: inline-flex;
+    gap: 6px;
+    background: #f3efe6;
+    border: 1px solid #e6e1d8;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.sandbox-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    color: #65605b;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sandbox-tab i {
+    font-size: 0.85rem;
+    color: #78716c;
+    transition: color 0.2s ease;
+}
+
+.sandbox-tab:hover {
+    color: #1c1917;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.sandbox-tab.active {
+    background: #ffffff;
+    color: #da7756;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e6e1d8;
+}
+
+.sandbox-tab.active i {
+    color: #da7756;
+}
+
+/* Dispatch Output Screen & Tech Card Light Theme Fixes */
+.dispatch-screen-box {
+    background: #fdfcf9 !important;
+    border: 1px solid #e6e1d8 !important;
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 110px;
+}
+
+.tech-assignment-card {
+    background: #ffffff !important;
+    border: 1px solid #e6e1d8 !important;
+    color: #1c1917 !important;
+}
+
+.tech-name {
+    color: #1c1917 !important;
+}
+
+.tech-sub-text {
+    color: #65605b !important;
+}
+
+.tech-avatar-circle {
+    background: #f3efe6 !important;
+    color: #1c1917 !important;
+    border: 1px solid #e6e1d8 !important;
+}
+
+.otp-pill {
+    background: #f3efe6 !important;
+    border: 1px solid #e6e1d8 !important;
+    color: #1c1917 !important;
+}
+
+.fee-badge-green {
+    background: rgba(218, 119, 86, 0.1) !important;
+    color: #c45b38 !important;
+    border: 1px solid rgba(218, 119, 86, 0.2) !important;
+}
+
+.visual-service-card {
+    background: #fbf9f5 !important;
+    border: 1px solid #e6e1d8 !important;
+}
+
+.visual-service-card.active {
+    border-color: #da7756 !important;
+    background: #fdf6f3 !important;
+}
+
+.vcard-icon {
+    color: #da7756 !important;
+}
+
+.vcard-info strong {
+    color: #1c1917 !important;
+}
+
+.sector-pill, .mood-pill {
+    background: #f3efe6 !important;
+    border: 1px solid #e6e1d8 !important;
+    color: #65605b !important;
+}
+
+.sector-pill.active, .mood-pill.active {
+    background: #da7756 !important;
+    border-color: #da7756 !important;
+    color: #ffffff !important;
+}
+
+.sector-pill:hover, .mood-pill:hover {
+    border-color: #da7756 !important;
+    color: #da7756 !important;
+}
+
+.crm-deal-card {
+    background: #ffffff !important;
+    border: 1px solid #e6e1d8 !important;
+    color: #1c1917 !important;
+}
+
+.swiggy-badge, .brand-logo-badge {
+    color: #1c1917 !important;
+}
+
+.stage-pill {
+    background: #f3efe6 !important;
+    color: #1c1917 !important;
+    border: 1px solid #e6e1d8 !important;
+}
+
+.revenue-ticker-box {
+    background: #f8f5ee !important;
+    border: 1px solid #e6e1d8 !important;
+}
+
+.ticker-label {
+    color: #65605b !important;
+}
+
+.ticker-val {
+    color: #1c1917 !important;
+}
