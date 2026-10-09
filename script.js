@@ -297,7 +297,7 @@ function renderQrCode() {
     if (container.children.length > 0) return;
 
     const portfolioUrl = "https://mangalcool222.github.io/portfolio/?ref=qr_resume";
-    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(portfolioUrl)}&color=050505&bgcolor=ccff00&margin=1`;
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(portfolioUrl)}&color=1c1917&bgcolor=fbf9f5&margin=1`;
 
     container.innerHTML = `
         <div class="qr-canvas-wrap">
@@ -312,7 +312,7 @@ function downloadQrCode() {
     showToast("Generating Executive QR Card PNG...");
 
     const portfolioUrl = "https://mangalcool222.github.io/portfolio/?ref=qr_resume";
-    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encodeURIComponent(portfolioUrl)}&color=050505&bgcolor=ccff00&margin=1`;
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encodeURIComponent(portfolioUrl)}&color=1c1917&bgcolor=fbf9f5&margin=1`;
 
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -323,12 +323,12 @@ function downloadQrCode() {
         canvas.width = size;
         canvas.height = size;
 
-        // Dark Luxury Card Background (#090a0b)
-        ctx.fillStyle = "#090a0b";
+        // Dark Luxury Card Background (#fbf9f5)
+        ctx.fillStyle = "#fbf9f5";
         ctx.fillRect(0, 0, size, size);
 
-        // Outer Neon Volt Accent Border (#ccff00)
-        ctx.strokeStyle = "#ccff00";
+        // Outer Neon Volt Accent Border (#da7756)
+        ctx.strokeStyle = "#da7756";
         ctx.lineWidth = 12;
         ctx.strokeRect(35, 35, size - 70, size - 70);
 
@@ -339,7 +339,7 @@ function downloadQrCode() {
         ctx.fillText("MANGAL SOREN", size / 2, 115);
 
         // Header Subtitle: PRODUCT BUILDING • TESTING • OPERATIONS • MBA, DU
-        ctx.fillStyle = "#ccff00";
+        ctx.fillStyle = "#da7756";
         ctx.font = "bold 20px 'Space Grotesk', -apple-system, sans-serif";
         ctx.fillText("PRODUCT BUILDING • TESTING • OPERATIONS • MBA, DU", size / 2, 160);
 
@@ -348,7 +348,7 @@ function downloadQrCode() {
         const qrX = (size - qrSize) / 2;
         const qrY = 210;
 
-        ctx.fillStyle = "#ccff00";
+        ctx.fillStyle = "#da7756";
         ctx.fillRect(qrX - 16, qrY - 16, qrSize + 32, qrSize + 32);
 
         // Draw High-Res QR Code Image
@@ -360,14 +360,14 @@ function downloadQrCode() {
         const logoX = (size - logoWidth) / 2;
         const logoY = qrY + (qrSize - logoHeight) / 2;
 
-        ctx.fillStyle = "#050505";
+        ctx.fillStyle = "#1c1917";
         ctx.fillRect(logoX, logoY, logoWidth, logoHeight);
 
-        ctx.strokeStyle = "#ccff00";
+        ctx.strokeStyle = "#da7756";
         ctx.lineWidth = 5;
         ctx.strokeRect(logoX, logoY, logoWidth, logoHeight);
 
-        ctx.fillStyle = "#ccff00";
+        ctx.fillStyle = "#da7756";
         ctx.font = "bold 32px 'Space Grotesk', sans-serif";
         ctx.fillText("MS.", size / 2, logoY + 42);
 
@@ -376,7 +376,7 @@ function downloadQrCode() {
         ctx.font = "600 22px 'Space Grotesk', -apple-system, sans-serif";
         ctx.fillText("SCAN WITH ANY PHONE CAMERA TO CONNECT", size / 2, 850);
 
-        ctx.fillStyle = "#ccff00";
+        ctx.fillStyle = "#da7756";
         ctx.font = "bold 26px 'Space Grotesk', -apple-system, sans-serif";
         ctx.fillText("https://mangalcool222.github.io/portfolio/", size / 2, 895);
 
@@ -471,6 +471,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-console.log("%c MANGAL SOREN — EXECUTIVE PORTFOLIO ", "background: #ccff00; color: black; padding: 10px; font-weight: bold; border-radius: 4px;");
+console.log("%c MANGAL SOREN — EXECUTIVE PORTFOLIO ", "background: #da7756; color: black; padding: 10px; font-weight: bold; border-radius: 4px;");
 
 
