@@ -243,11 +243,23 @@ function initScrollReveal() {
 
 // Tab Filter Logic
 function filterView(viewCategory, btn) {
-    if (btn) {
-        document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+    // 1. Sync active class on sticky filter tabs
+    const tabs = document.querySelectorAll('.filter-tab');
+    tabs.forEach(b => {
+        const onclickAttr = b.getAttribute('onclick') || '';
+        if (onclickAttr.includes(`'${viewCategory}'`)) {
+            b.classList.add('active');
+        } else {
+            b.classList.remove('active');
+        }
+    });
+
+    if (btn && btn.classList.contains('filter-tab')) {
+        tabs.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
     }
 
+    // 2. Show / Hide sections
     const sections = document.querySelectorAll('.view-section');
 
     if (viewCategory === 'all') {
@@ -263,6 +275,20 @@ function filterView(viewCategory, btn) {
                 sec.classList.add('hidden-view');
             }
         });
+    }
+
+    // 3. Smooth scroll to sticky bar if clicked while below it
+    if (btn) {
+        const filterBar = document.querySelector('.sticky-filter-bar');
+        if (filterBar) {
+            const filterBarTop = filterBar.getBoundingClientRect().top + window.scrollY - 75;
+            if (window.scrollY > filterBarTop + 50) {
+                window.scrollTo({
+                    top: filterBarTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
     }
 }
 
@@ -458,10 +484,37 @@ function showToast(message) {
     }, 3000);
 }
 
+// Floating Back to Top Button Logic
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTopBtn');
+    if (!btn) return;
+    if (window.scrollY > 400) {
+        btn.classList.add('visible');
+    } else {
+        btn.classList.remove('visible');
+    }
+});
+
 // DOM Init
 window.addEventListener('DOMContentLoaded', () => {
     initSubtleCardTilt();
     initScrollReveal();
+
+    // Auto-filter on load: check URL hash or default to 'work'
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    if (hash === 'experience' || hash === 'research' || hash === 'about' || hash === 'work' || hash === 'all') {
+        filterView(hash);
+    } else {
+        // Default to work view so visitors don't have to scroll through 7,000+ px
+        filterView('work');
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('ref') === 'qr_resume' || urlParams.get('ref') === 'qr') {
